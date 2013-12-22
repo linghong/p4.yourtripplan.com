@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
- 	<head>
-  		<meta charset="UTF-8">
-  		<meta name="description" content="Vocabulary test">
-  		<title>My DWA15 Course P4 Project</title>
-  		<link rel="stylesheet" type="text/css" href="style.css">
- 	</head>
 
-	<body>
-		<article>
 			<div class="navorangebar">
 	        	<a href='/test'>Try Vocabulary Test</a>|<a href='/test/practice'>Try Practice Exercise</a>	
 	        </div>
@@ -27,11 +17,4 @@
 			<input type ='button' id="start_practice" value='Start'><br>
 			<div class="practice_word"></div>
 			<div  id="practice_submit"><div>
-									
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-			<script src='/js/vocabularylibrary.js'></script>
-			<script src='/js/test.js'></script>
-
-		</article>
-	</body>
-</html>
+								

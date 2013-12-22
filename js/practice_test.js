@@ -1,17 +1,3 @@
-
-/*--------------------------------------------------------------------------------
-Start a new test
------------------------------------------------------------------------------*/
-
-	//start a new word test
-	$('.re_start').click(function(){
-			location.reload()
-	});
-
-
-});
-
-
 /*==============================================================================================================================
 For Word Practice Exercise Page
 ================================================================================================================================*/
@@ -27,11 +13,22 @@ For Word Practice Exercise Page
    	wrong_answer_number =0;
 	question_number = 0;
 
-	//Generate a word practice array.
-	practiceVocabulary = newVocabulary;
-	practiceExplanations = vocabularyExplanations;
+		$.ajax({
+			type:'POST',
+			url:'/tests/start_practice/',
+			beforeSend: function() {
+	            // Display a loading message while waiting for the ajax call to complete
+	            $('#results').html("Loading...");
+	        },
+			sucess: function (response){
+			var data = $.parseJSON (response);
+			}
 
-$('#start_practice').click(function(){
+	//Generate a word practice array.
+	practiceVocabulary = $practice_vocabulary['word'];
+	practiceExplanation =  $practice_vocabulary['explanation'];
+
+	$('#start_practice').click(function(){
 	//Question number increase by each click
 	i=i+1;
 
@@ -40,15 +37,17 @@ $('#start_practice').click(function(){
 	$("#re_load").html('<input type ="submit"  class="re_start" id="practice_reload" value="Reload to Start a New Test">');
 	$("#practice_submit").html('<input type ="submit"  id="check_exerciseanswer" value="Check Answer for this Word"><br><input type ="submit"  id="check_result" value="Check My Test Score"><br><br>');
 
-	//Generate a random number used for selecting test word and the explanation.(Only 50 words from the library for practice)
+	//Generate a random number used for selecting test word.(Only 50 words from the library for practice)
 	words_count=50;
-	random_number0 = Math.floor(Math.random()*words_count);
+	random_number0 = Math.floor(Math.random()*words_count)+1;
+
+
 
 /*----------------------------------------------------------------------------------------
 Produce a word for testing and the four explanation choices
 ----------------------------------------------------------------------------------------*/
-	//Pick up four wordexplanation choice from explanationchoice library
-	explanationchoice(random_number0,50, vocabularyExplanations);
+	//Pick up four the position of word explanation choice in wordChoice array
+	explanationchoice(random_number0,50);
 
 	//Print out the test word and the four explanations
 	$(".practice_word").html("Question "+i+". "+ practiceVocabulary[random_number0]+
