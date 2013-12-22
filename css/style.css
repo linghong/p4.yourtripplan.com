@@ -16,7 +16,7 @@ body{
   color:black;
   font-size:15px;
   font-family:"Truebuchet MS", "Helvetica", Serif;
-  width:1050px;
+  width:1024px;
   text-align:center;
   background-color:#8C2E00; 
   background-repeat:no-repeat;
@@ -25,15 +25,39 @@ body{
   }
 
 article{
-  position:absolute;
   text-align:justify;
-  width:80%;
-  height:3200px;
+  padding-left:2%;  
+  padding-right:2%;
+  }
+  .container{
+  position:absolute;
   padding-left:5%;  
   padding-right:5%;
   margin-left:5%;
   margin-right:5%;
-  background-color:#FFFFD5; 
+  margin-top:100px;
+  color:black;
+  font-size:15px;
+  font-family:"Truebuchet MS", "Helvetica", Serif;
+  width:80%;
+  height:3500px;
+  text-align:center;
+  background-color: #FFFFCA;
+  }
+
+ .sitetitle{
+  position:absolute;
+  padding-left:5%;  
+  padding-right:5%;
+  margin-left:5%;
+  margin-right:5%;
+  width:80%;
+  height:80px;
+  margin-bottom:20px;
+  text-align:center;
+  font-size:36px;
+  padding-top:10px;
+  background-color: #FFFFCA;
   }
 
 h1{
@@ -70,28 +94,6 @@ span{
   font-weight:bold;
   }
 
-  .sitetitle{
-  width:80%;
-  margin-left:5%;
-  height:80px;
-  margin-bottom:20px;
-  text-align:left;
-  font-size:36px;
-  padding-top:10px;
-  background-color: #FFFFCA;
-  }
-
-.container{
-  margin-left:5%;
-  color:black;
-  font-size:15px;
-  font-family:"Truebuchet MS", "Helvetica", Serif;
-  width:1024px;
-  height:2500px;
-  text-align:center;
-  background-color: #FFFFCA;
-  }
-
   
 /*------------------------------------------------------------------------------------------------------------------------
 Front page
@@ -100,12 +102,13 @@ Front page
 
 .leftcolumn{
   float:left;
-  margin-left:5%;
+  margin-left:2%;
+  padding:20px;
   margin-top:40px;
   width: 40%; 
-  height:400px; 
-  background-color: #CFA0A0;
-  border: 2px solid #844242;
+  height:520px; 
+  background-color:#F8DAA3; 
+  border: 5px solid #844242;
   }
 
 .rightcolumn{
@@ -115,7 +118,7 @@ Front page
   }
   
 #top{
-  margin-top:20px;
+  margin-top:40px;
   position:relative;
   width:60%;
   height:auto;
@@ -153,7 +156,7 @@ CSS Codes for Posts and Users
 .box{
   position:relative;
   width:80%;
-  background-color: #FFCAB0;
+  background-color:#F8DAA3;
   border:3px solid #FF9F40; 
   height:auto;
   padding:5%;
@@ -161,16 +164,28 @@ CSS Codes for Posts and Users
   text-align:center;
   }
 
+.avatarbox{
+  position:relative;
+  width:25%;
+  background-color:#F8DAA3; 
+  border:6px solid #844242;
+  height:auto;
+  padding:5%;
+  margin:5%;
+  text-align:center;
+  }
+
+
 .profile{
-    width:50%;
-    background-color: #FFCAB0;
-    border:3px solid #FF9F40; 
-    height:auto;
+  width:50%;
+  background-color: #FFCAB0;
+  border:3px solid #FF9F40; 
+  height:auto;
 	margin-top: 20px;
-    padding-left:5%;
-    padding-top:10px;
-    padding-bottom:15px;
-    text-align:left;
+  padding-left:5%;
+  padding-top:10px;
+  padding-bottom:15px;
+  text-align:left;
     }
 
 .user{
@@ -232,6 +247,12 @@ Title , subtitle, menu
   color: #00000; 
   background-color: #ffffff;
   } 
+
+  .button{
+  width:100px;
+  height:40px;
+  background-color:#844242;
+  }
 
 /*------------------------------------------------------------------------------------------------------------------------
 Clickable button

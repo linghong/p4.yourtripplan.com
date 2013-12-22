@@ -65,7 +65,7 @@
            setcookie('token', $token, strtotime('+1year'),'/');
           
            #Send them to the main index.
-        Router::redirect("tests/index");
+        Router::redirect("/tests/index");
       }else {
            #Send them back to the login page.
         Router::redirect("/users/login");
