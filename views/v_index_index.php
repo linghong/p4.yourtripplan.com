@@ -1,11 +1,9 @@
-<p>
-	Hello World! You have successfully spawned a new application.
-</p>
 
-<p>
-	This message is being triggered via the c_index.php controller, within the index() method.
-</p>
+	<div class="frontbox">
+		<h2>Welcome to SAT Vocabulary Helper </h2>
+		<p>   This site is for high school studnets who are preparing for their SAT Test.</p>
+		<p>   You will practice your SAT vocabulary on this site.</p>
+	</div>
 
-<p>
-	<strong>Since everything is in working order, you should now delete <?php echo APP_PATH?>diagnostics.php</strong>
-</p>
+
+	

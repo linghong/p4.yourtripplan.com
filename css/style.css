@@ -1,0 +1,307 @@
+/*
+Title:My P4 Project
+Description: Harvard Extension Class: Dynamic Website Application, Project 3
+URI: http://p3.yourtripplan.com/
+Author: Linghong Chen
+*/
+/*------------------------------------------------------------------------------------------------------------------------
+Main CSS Codes
+---------------------------------------------------------------------------------------------------------------------------
+*/
+*/
+article,body{
+	display:block;
+  }
+
+ul{
+ text-align:left;
+ }
+
+nav{
+ padding-top:20px;
+ }
+
+nav li{
+ display:inline;
+  }
+
+span{
+  font-weight:bold;
+  }
+  
+/*------------------------------------------------------------------------------------------------------------------------
+Front page
+---------------------------------------------------------------------------------------------------------------------------
+*/
+.sitetitle{
+  width:1024px;
+  height:80px;
+  margin-bottom:20px;
+  text-align:left;
+  font-size:36px;
+  padding-top:10px;
+  background-color: #FFFFCA;
+  }
+
+.container{
+  color:black;
+  font-size:15px;
+  font-family:"Truebuchet MS", "Helvetica", Serif;
+  width:1024px;
+  height:2500px;
+  text-align:center;
+  background-color: #FFFFCA;
+  }
+
+.leftcolumn{
+  float:left;
+  margin-left:5%;
+  margin-top:40px;
+  width: 40%; 
+  height:400px; 
+  background-color: #CFA0A0;
+  border: 2px solid #844242;
+  }
+
+.rightcolumn{
+  float:right;
+  width:50%; 
+  height:auto; 
+  }
+  
+#top{
+  margin-top:20px;
+  position:relative;
+  width:60%;
+  height:auto;
+  background-color: #844242;
+  border: 2px solid #844242;
+  margin-left:10%;
+  }
+
+#bottom{
+  margin-top:20px;
+  position:relative;
+  width: 80%;
+  height:auto;
+  background-color: #844242;
+  border: 2px solid #844242;
+  }
+
+.clear{
+  clear:both;
+  }
+/*------------------------------------------------------------------------------------------------------------------------
+CSS Codes for Posts and Users
+---------------------------------------------------------------------------------------------------------------------------
+*/
+
+.midright{
+  margin-left:60%;
+  width:100px;
+  height:40px;
+  border-radius:8px;
+  background-color:#FF6600;
+  }
+
+
+.box{
+  position:relative;
+  width:80%;
+  background-color: #FFCAB0;
+  border:3px solid #FF9F40; 
+  height:auto;
+  padding:5%;
+  margin:5%;
+  text-align:center;
+  }
+
+.profile{
+    width:50%;
+    background-color: #FFCAB0;
+    border:3px solid #FF9F40; 
+    height:auto;
+	margin-top: 20px;
+    padding-left:5%;
+    padding-top:10px;
+    padding-bottom:15px;
+    text-align:left;
+    }
+
+.user{
+  position:relative;
+  width:30%;
+  background-color: #FF3300;  
+  border:3px solid #FF6600;
+  color:white;
+  height:auto;
+  padding:15px;
+  margin:20px;
+  text-align:left;
+  }
+
+
+article,body{
+	display:block;
+  }
+ 
+body{
+  color:black;
+  font-size:15px;
+  font-family:"Truebuchet MS", "Helvetica", Serif;
+  width:1050px;
+  text-align:center;
+  background-color:#8C2E00; 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center; 
+  }
+
+article{
+  position:absolute;
+  text-align:justify;
+  width:80%;
+  height:3200px;
+  padding-left:5%;	
+  padding-right:5%;
+  margin-left:5%;
+  margin-right:5%;
+  background-color:#FFFFD5; 
+  }
+
+
+
+h1{
+  font-weight:bold;
+ 	font-size:22px;
+  }
+
+h2{
+  font-weight:bold;
+  font-size:17px;
+  }
+
+p{
+  font-size:18px;
+  width:90%;
+  height: auto;
+  padding:10px;
+  text-align:left;
+ }
+
+/*------------------------------------------------------------------------------------------------------------------------
+Title , subtitle, menu
+---------------------------------------------------------------------------------------------------------------------------
+*/
+#preface{
+  padding:10px;
+  font-size:20px;
+  color:#8C2E00; 
+}
+#title{
+  Margin-top:20px;
+  width:90%;
+  height:40px;
+  text-align:center;
+  font-size:30px;
+  padding:10px;
+  }
+
+#subtitle{
+  width:90%;
+  text-align:left;
+  font-size:20px;
+  padding:20px;
+  margin-bottom:20px;
+  }
+
+  .navorangebar{
+  margin-top:20px;
+  padding:10px;
+  width:460px;
+  height:28px;
+  font-size:22px;
+  }
+   .navorangebar a{
+   width:180px;
+  height:40px;
+   text-decoration: none; 
+  margin: 0px; 
+  color:#001100; 
+  }
+  .navorangebar a:hover {
+  width:180px;
+  height:40px;
+  color: #00000; 
+  background-color: #ffffff;
+  } 
+
+/*------------------------------------------------------------------------------------------------------------------------
+Clickable button
+---------------------------------------------------------------------------------------------------------------------------
+*/
+.start_test,.re_start{
+  margin-top:20px;
+  margin-left:50%;
+  width:250px;
+  height:50px;
+  font-size:18px;
+  padding-top:15px;
+  background-color:#CFC892; 
+  }
+ 
+.word{
+  margin-left: 10px;
+  text-align:left;
+  font-size:28px;
+  padding:10px;
+  margin-bottom:10px;
+  }
+#question{
+  font-weight: bold;
+  font-size: 18px;
+}
+ .choice{
+  margin-top:10px;
+  margin-left:45px;
+  font-size:20px;
+  margin-bottom:10px;
+  }
+#check_testanswer, #check_exerciseanswer{
+  margin-left:60px;
+  margin-top:30px;
+  height:40px;
+  width:210px;
+  font-size:16px;
+  background-color:#CFC892; 
+  }
+
+#start_practice{
+  margin-left:200px;
+  margin-top:20px;
+  height:40px;
+  width:120px;
+  font-size:16px;
+  background-color:#CFC892; 
+  }
+#check_exerciseanswer{
+  float:left;
+  margin-left:60px;
+  height:35px;
+  width:180px;
+  font-size:13px;
+  padding:5px;
+  background-color:#FFFF99;
+  }
+#check_result{
+  float:left;
+  margin-left:30px;
+  margin-top:10px;
+  height:35px;
+  width:180px;
+  font-size:13px;
+  padding:5px;
+  background-color:#FFFF99;
+  }
+
+
