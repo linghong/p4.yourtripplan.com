@@ -8,10 +8,51 @@ Author: Linghong Chen
 Main CSS Codes
 ---------------------------------------------------------------------------------------------------------------------------
 */
-*/
 article,body{
 	display:block;
   }
+
+body{
+  color:black;
+  font-size:15px;
+  font-family:"Truebuchet MS", "Helvetica", Serif;
+  width:1050px;
+  text-align:center;
+  background-color:#8C2E00; 
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center; 
+  }
+
+article{
+  position:absolute;
+  text-align:justify;
+  width:80%;
+  height:3200px;
+  padding-left:5%;  
+  padding-right:5%;
+  margin-left:5%;
+  margin-right:5%;
+  background-color:#FFFFD5; 
+  }
+
+h1{
+  font-weight:bold;
+  font-size:22px;
+  }
+
+h2{
+  font-weight:bold;
+  font-size:17px;
+  }
+
+p{
+  font-size:18px;
+  width:90%;
+  height: auto;
+  padding:10px;
+  text-align:left;
+ }
 
 ul{
  text-align:left;
@@ -28,13 +69,10 @@ nav li{
 span{
   font-weight:bold;
   }
-  
-/*------------------------------------------------------------------------------------------------------------------------
-Front page
----------------------------------------------------------------------------------------------------------------------------
-*/
-.sitetitle{
-  width:1024px;
+
+  .sitetitle{
+  width:80%;
+  margin-left:5%;
   height:80px;
   margin-bottom:20px;
   text-align:left;
@@ -44,6 +82,7 @@ Front page
   }
 
 .container{
+  margin-left:5%;
   color:black;
   font-size:15px;
   font-family:"Truebuchet MS", "Helvetica", Serif;
@@ -52,6 +91,12 @@ Front page
   text-align:center;
   background-color: #FFFFCA;
   }
+
+  
+/*------------------------------------------------------------------------------------------------------------------------
+Front page
+---------------------------------------------------------------------------------------------------------------------------
+*/
 
 .leftcolumn{
   float:left;
@@ -140,54 +185,6 @@ CSS Codes for Posts and Users
   text-align:left;
   }
 
-
-article,body{
-	display:block;
-  }
- 
-body{
-  color:black;
-  font-size:15px;
-  font-family:"Truebuchet MS", "Helvetica", Serif;
-  width:1050px;
-  text-align:center;
-  background-color:#8C2E00; 
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-position:center; 
-  }
-
-article{
-  position:absolute;
-  text-align:justify;
-  width:80%;
-  height:3200px;
-  padding-left:5%;	
-  padding-right:5%;
-  margin-left:5%;
-  margin-right:5%;
-  background-color:#FFFFD5; 
-  }
-
-
-
-h1{
-  font-weight:bold;
- 	font-size:22px;
-  }
-
-h2{
-  font-weight:bold;
-  font-size:17px;
-  }
-
-p{
-  font-size:18px;
-  width:90%;
-  height: auto;
-  padding:10px;
-  text-align:left;
- }
 
 /*------------------------------------------------------------------------------------------------------------------------
 Title , subtitle, menu

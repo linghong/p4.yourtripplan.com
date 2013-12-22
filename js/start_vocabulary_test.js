@@ -3,21 +3,21 @@ Functions
 ===============================================================================================================================*/
 
 /*----------------------------------------------------------------------------------------------
-set up a function to generate four word explanation choices to form the wordChoice array, 
-	wordExplanations:array for the word explanations
-	words_count:array length
-	testword_number: representation the posotion for the word selected in the array
+set up a function to generate four word explanation choices to form the wordChoice array,
+	wordChoice Array: the four explanation choices
+	words_count:SAT vocabulary database words total number
+	testword_number: represent the user_id for the word selected from the SAT vocabulary database
 	random_number1,random_number2,random_number3: 
-	representation the posotion for three wrong explanation choice in the array
+	represent the user_id for the wrong word explanations selected from the SAT vocabulary database
 ------------------------------------------------------------------------------------------------*/
 
 	//Generate three random number 
-	function wrongnumber(testword_number,words_count){ 		
+	function explanationchoice(testword_number,words_count){ 		
 
-		//Generate three random numbers, which will be used for selecting the three wrong explanations from the vocabulary array library 
-		random_number1 = Math.floor(Math.random()*words_count);
-		random_number2 = Math.floor(Math.random()*words_count);
-		random_number3 = Math.floor(Math.random()*words_count);
+		//Generate three random numbers, which will be used for selecting the three wrong explanations from the SAT vocabulary database
+		random_number1 = Math.floor(Math.random()*words_count)+1;
+		random_number2 = Math.floor(Math.random()*words_count)+1;
+		random_number3 = Math.floor(Math.random()*words_count)+1;
 
     	//Check if the random number is same with each other. If so, regenerate a new one.
     	while (random_number1 == testword_number) 
@@ -67,11 +67,11 @@ $('.start_test').one("click", function(){
 	//Generate a number array used for selceting test words and their correct explanations.
 	randomNumber= new Array();
 	
-	//Generate 20 test words
+	//Generate 20 numbers to be used to pick up the test words from SAT vocabulary database
 	for (i=0;i<20; i++){
 
-		//Generate 20 random number, which will be used in the array for selecting the test words and their correct explanations.
-		randomNumber[i] = Math.floor(Math.random()*words_count);
+		//Generate 20 random number, which will be used in selecting the test words and their correct explanations.
+		randomNumber[i] = Math.floor(Math.random()*words_count)+1;
 			if(i>0){
 	 			for (j=i-1;j>-1; j--){
 	 				if(randomNumber[i] == randomNumber[j]){
@@ -81,21 +81,25 @@ $('.start_test').one("click", function(){
 	 			}
 	 		}
 		//Use the explanationchoice function to produce four explanation choices for each test word
-		wrongnumber(randomNumber[i],words_count);
+		explanationchoice(randomNumber[i],words_count);
 
+		$wordChoice = JSON.stringfy(wordChoice);
+		$randNumber = JSON.stringfy(randomNumber);
+
+		//Using ajax to get the data from database and print it out
 		$.ajax({
 			type:'POST',
-			url:'tests/start_vocabulary_test/',
+			url:'/tests/start_vocabulary_test/',
 			beforeSend: function() {
 	            // Display a loading message while waiting for the ajax call to complete
 	            $('#results').html("Loading...");
 	        },
 			sucess: function (response){
 
-				//parse the JSON results into an array
+				//Parse the JSON results into an array
 				var data = $.parseJSON (response);
 
-				//List the test word and the four explanations on the screen
+				//Generate an array to store word question number
 				wordQuestion = new Array
 					(
 					"Question1","Question2","Question3","Question4","Question5","Question6","Question7","Question8","Question9","Question10","Question11","Question12","Question13","Question14","Question15","Question16","Question17","Question18","Question19","Question20"
@@ -103,14 +107,14 @@ $('.start_test').one("click", function(){
 
 				q=20-i;
 		
-		
+				//List the test word and the four explanations on the screen
 				$(".word").after
 					(
 					'<div id="question">Question '+q+'. '+ test_word+
-					'</div><br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer0" value="'+word_explanation1+'">'+wordChoice[0]+
-					'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer1" value="'+word_explanation2+'">'+wordChoice[1]+
-					'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer2" value="'+word_explanation3+'">'+wordChoice[2]+
-					'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer3" value="'+word_explanation4+'">'+wordChoice[3]+'<br><br>'
+					'</div><br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer0" value="'+word_explanation1+'">'+word_explanation1+
+					'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer1" value="'+word_explanation2+'">'+word_explanation2+
+					'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer2" value="'+word_explanation3+'">'+word_explanation3+
+					'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer3" value="'+word_explanation4+'">'+word_explanation4+'<br><br>'
 					);
 			},
 		});

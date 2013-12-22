@@ -12,5 +12,7 @@
 			
 			<input type ='button' class="start_test" value='Start A Vocabulary Test'><br>
 			<div class="word"></div>
-			<div  id="submit"></div>					
+			<div  id="submit"></div>	
+	
+						
 		</article>

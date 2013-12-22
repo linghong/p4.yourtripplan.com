@@ -33,16 +33,13 @@
 
       DB::instance(DB_NAME)->insert_row('users', $_POST);
 
-   #   echo "You have sucessufully signed up, click here to <a href='/''>login</a>";
-      #Send them to the login page
-   Router::redirect('/users/login');
-
+    echo "You have sucessufully signed up, click here to <a href='/users/login'>login</a>";
     }
 
     public function login(){
         #set up view
         $this->template->content = view::instance ('v_users_login');
-        $this->template->title   ="Login";
+        $this->template->title   = "Login";
 
         #render template
         echo $this->template;
@@ -52,13 +49,12 @@
       #Sanitize the user entered data
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
-
       #compare password against one in the db
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
      
       #retrive the token
         $q = 'SELECT token
-              FROM yourtri1_dwa15p4.users
+              FROM users
               WHERE email= "'.$_POST['email'].'"
               AND password ="'.$_POST['password'].'"';
     
@@ -69,10 +65,10 @@
            setcookie('token', $token, strtotime('+1year'),'/');
           
            #Send them to the main index.
-        Router::redirect("/");
+        Router::redirect("tests/index");
       }else {
-           #Send them back to the main index.
-        Router::redirect("/");
+           #Send them back to the login page.
+        Router::redirect("/users/login");
         }
        
       }

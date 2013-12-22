@@ -25,30 +25,31 @@ Class tests_controller extends base_controller{
 	 public function start_vocabulary_test(){
 
 	 		$data = Array();
-
+ 	$random_Number = json_decode($randomNumber);
+	$woed_Choice = json_decode($wordChoice);
 	 		#Findout words
 	 		$q = "SELECT word 
-	 		FROM yourtri1_dwa15p4.sat_vocabulary
+	 		FROM sat_vocabulary
 	 		Where user_id= randomNumber[i]";
 	 		$data['test_word'] = DB::instace(DB_NAME)->select_files($q);
 
-			$q = "SELECT word_explanation 
+			$q = "SELECT explanation 
 	 		FROM sat_vocabulary
-	 		Where yourtri1_dwa15p4.user_id= wordChoice[0]";
+	 		Where user_id= wordChoice[0]";
 	 		$data['word_explanation1'] = DB::instace(DB_NAME)->select_files($q);
 
-	 		$q = "SELECT word_explanation 
-	 		FROM yourtri1_dwa15p4.sat_vocabulary
+	 		$q = "SELECT explanation 
+	 		FROM sat_vocabulary
 	 		Where user_id= wordChoice[1]";
 	 		$data['word_explanation2'] = DB::instace(DB_NAME)->select_files($q);
 
-	 		$q = "SELECT word_explanation 
-	 		FROM yourtri1_dwa15p4.sat_vocabulary
+	 		$q = "SELECT explanation 
+	 		FROM sat_vocabulary
 	 		Where user_id= wordChoice[2]";
 	 		$data['word_explanation3'] = DB::instace(DB_NAME)->select_files($q);
 
-	 		$q = "SELECT word_explanation 
-	 		FROM yourtri1_dwa15p4.sat_vocabulary
+	 		$q = "SELECT explanation 
+	 		FROM sat_vocabulary
 	 		Where user_id= wordChoice[3]";
 	 		$data['word_explanation4'] = DB::instace(DB_NAME)->select_files($q);
 
