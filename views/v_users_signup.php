@@ -5,6 +5,8 @@
             <p>All fields are required. Please sign up again.</p>
         </div>
     <?php endif; ?>
+    
+
 
 <form class="box" method='POST' action='/users/p_signup'>
 

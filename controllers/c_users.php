@@ -180,7 +180,7 @@
     public function p_avatar(){ 
    
       #UPLOAD IMAGE 
-        $avatar=Upload::upload($_FILES, "/uploads/avatars/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $new_file_name = NULL)->sanitize($_avatar);
+        $avatar=Upload::upload($_FILES, "/uploads/avatars/", array("JPG", "JPEG", "jpg", "jpeg", "gif", "GIF", "png", "PNG"), $new_file_name = NULL);
  
         /*
          $path = "/uploads/avatars/";

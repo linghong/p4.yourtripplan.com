@@ -27,11 +27,11 @@
 		<?php if($user): ?>
 			
 			<nav>
-				<li><a href='/posts'>Forum</a></li>
+				<li><a href='/posts'>Message Board</a></li>
+				<li><a href='/posts/myposts'>My Posts</a></li>
 				<li><a href='/tests/'>Try Vocabulary Test</a></li>
-				<li><a href='/tests/practice'>Practice Exercise</a></li>		
-				<li><a href = '/users/profile/'>My Profile</a></li>
-				<li><a href='/users/avatar'>Add Avata</a></li>
+				<li><a href='/tests/practice'>Practice Exercise</a></li>
+				<li><a href = '/users/profile/'>My Profile</a></li>			
 				<li><a href='/users/logout'>Log out</a></li>
 			</nav>
 			<article>

@@ -25,6 +25,7 @@ body{
   }
 
 article{
+  padding:20px;
   text-align:justify;
   padding-left:2%;  
   padding-right:2%;
@@ -91,7 +92,7 @@ nav li{
   }
 
 span{
-  font-weight:bold;
+font-weight:bold;
   }
 
   
@@ -168,6 +169,25 @@ CSS Codes for Posts and Users
   text-align:center;
   }
 
+.addpost{
+  position:relative;
+  width:80%;
+  height:200px;
+  background-color: #FFFFFF;  
+  border: 2px solid #FFCCFF;
+  margin:20px;
+  }
+
+  .post{
+  position:relative;
+  width:80%;
+  height:auto;
+  background-color: #FFFFFF;  
+  border: 2px solid  #FFCCFF;
+  margin:15px;
+  padding:15px;
+  }
+
 .avatarbox{
   position:relative;
   width:25%;
@@ -179,7 +199,6 @@ CSS Codes for Posts and Users
   text-align:center;
   }
 
-
 .profile{
   width:50%;
   background-color: #FFCAB0;
@@ -190,7 +209,7 @@ CSS Codes for Posts and Users
   padding-top:10px;
   padding-bottom:15px;
   text-align:left;
-    }
+  }
 
 .user{
   position:relative;
@@ -231,28 +250,30 @@ Title , subtitle, menu
   margin-bottom:20px;
   }
 
-  .navorangebar{
+.navorangebar{
   margin-top:20px;
   padding:10px;
   width:460px;
   height:28px;
   font-size:22px;
   }
-   .navorangebar a{
+
+.navorangebar a{
    width:180px;
   height:40px;
    text-decoration: none; 
   margin: 0px; 
   color:#001100; 
   }
-  .navorangebar a:hover {
+
+.navorangebar a:hover {
   width:180px;
   height:40px;
   color: #00000; 
   background-color: #ffffff;
   } 
 
-  .button{
+.button{
   width:100px;
   height:40px;
   background-color:#844242;
@@ -279,16 +300,19 @@ Clickable button
   padding:10px;
   margin-bottom:10px;
   }
+
 #question{
   font-weight: bold;
   font-size: 18px;
 }
- .choice{
+
+.choice{
   margin-top:10px;
   margin-left:45px;
   font-size:20px;
   margin-bottom:10px;
   }
+
 #check_testanswer, #check_exerciseanswer{
   margin-left:60px;
   margin-top:30px;
@@ -306,6 +330,7 @@ Clickable button
   font-size:16px;
   background-color:#CFC892; 
   }
+
 #check_exerciseanswer{
   float:left;
   margin-left:60px;
@@ -315,6 +340,7 @@ Clickable button
   padding:5px;
   background-color:#FFFF99;
   }
+
 #check_result{
   float:left;
   margin-left:30px;

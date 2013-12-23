@@ -1,7 +1,3 @@
-
-			<div class="navorangebar">
-	        	<a href='/test'>Try Vocabulary Test</a>|<a href='/test/practice'>Try Practice Exercise</a>	
-	        </div>
 			<div id="title">
 				Let's Do A Vocabulary Practice Exercise
 			</div>
