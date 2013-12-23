@@ -106,7 +106,7 @@ Front page
   padding:20px;
   margin-top:40px;
   width: 40%; 
-  height:520px; 
+  height:auto; 
   background-color:#F8DAA3; 
   border: 5px solid #844242;
   }
@@ -138,6 +138,10 @@ Front page
 
 .clear{
   clear:both;
+  }
+
+.error{
+  color:red;
   }
 /*------------------------------------------------------------------------------------------------------------------------
 CSS Codes for Posts and Users

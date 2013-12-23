@@ -44,6 +44,7 @@ $('.start_test').one("click", function(){
 		$.ajax({
 			type:'POST',
 			url:'/tests/start_vocabulary_test/',
+			data: {randomNumber: randomNumber, wordChoice: wordChoice},
 			beforeSend: function() {
 	            // Display a loading message while waiting for the ajax call to complete
 	            $('#results').html("Loading...");

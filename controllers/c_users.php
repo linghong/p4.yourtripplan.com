@@ -6,73 +6,97 @@
     }
 
 
-    public function signup() {
+    public function signup($error = NULL) {
 
         #Set up the view and title
-           $this->template->content = View::instance('v_users_signup');
-           $this->template->title   = "Sign Up";
+          $this->template->content = View::instance('v_users_signup');
+          $this->template->title   = "Sign Up";
+
+        # Pass errors
+          $this->template->content->error = $error;
  
         # Render the view
-           echo $this->template;
+          echo $this->template;
 
     }
 
     #see what the form submitted
     public function p_signup() {
-    
-      #Sanitize the user entered data
-        $_POST = DB::instance(DB_NAME)->sanitize($_POST);  
 
-      #Store data
-        $_POST['created'] = Time::now();
-        $_POST['modified'] = Time::now();
-        $_POST['avatar']='example.gif';
-      #Encrypt the password
-        $_POST['password'] =sha1(PASSWORD_SALT.$_POST['password']);
-        $_POST['token']  = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+       #select email
+        $email = DB::instance(DB_NAME)->select_field('SELECT email FROM users WHERE email = "'.$_POST['email'].'"');
+       
+       #Check if email already exists.If so, display error message
+        if($email)
+        {
+          die("Email already exists! Please sign up again. <a href='/users/signup/'>Back to the sign up page</a>");
+        }
 
-      DB::instance(DB_NAME)->insert_row('users', $_POST);
+        # Prevent from leaving blank fields                
+        elseif (empty($_POST['last_name']) || empty($_POST['first_name']) || empty($_POST['password']) || empty($_POST['email'])) 
+        {
+        # Display error message
+        Router::redirect("/users/signup/error");
+        }
+        
+        else{
+        #Sanitize the user entered data
+          $_POST = DB::instance(DB_NAME)->sanitize($_POST);  
 
-    echo "You have sucessufully signed up, click here to <a href='/users/login'>login</a>";
+        #Store data
+          $_POST['created'] = Time::now();
+          $_POST['modified'] = Time::now();
+          $_POST['avatar']='example.gif';
+        #Encrypt the password
+          $_POST['password'] =sha1(PASSWORD_SALT.$_POST['password']);
+          $_POST['token']  = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+
+        DB::instance(DB_NAME)->insert_row('users', $_POST);
+        }
     }
 
-    public function login(){
+    public function login($error = NULL){
         #set up view
         $this->template->content = view::instance ('v_users_login');
         $this->template->title   = "Login";
+
+        # Pass data to the view
+        $this->template ->content ->error = $error;
 
         #render template
         echo $this->template;
     }
 
     public function p_login(){
-      #Sanitize the user entered data
-        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
-      #compare password against one in the db
-        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
-     
-      #retrive the token
-        $q = 'SELECT token
-              FROM users
-              WHERE email= "'.$_POST['email'].'"
-              AND password ="'.$_POST['password'].'"';
-    
-      $token = DB::instance(DB_NAME)->select_field($q);
+        #Sanitize the user entered data
+          $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
-      #login or not login
-        if($token){
-           setcookie('token', $token, strtotime('+1year'),'/');
-          
-           #Send them to the main index.
-        Router::redirect("/tests/index");
-      }else {
-           #Send them back to the login page.
-        Router::redirect("/users/login");
-        }
+        #compare password against one in the db
+          $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
        
-      }
+        #retrive the token
+          $q = 'SELECT token
+                FROM users
+                WHERE email= "'.$_POST['email'].'"
+                AND password ="'.$_POST['password'].'"';
+      
+        $token = DB::instance(DB_NAME)->select_field($q);
 
+        #login or not login
+        if($token)
+        {
+          setcookie('token', $token, strtotime('+1year'),'/');
+            
+          #Send them to the main index.
+          Router::redirect("/tests/index");
+        }
+        else 
+        {
+          #Send them back to the login page.
+          Router::redirect("/users/login/error");
+        }
+    }
     public function logout(){
   
       #Generate and save a new token for next login
