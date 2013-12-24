@@ -17,8 +17,12 @@ Javascript used:
 1)generate random numbers, and use these numbers to pick up words and four word explanations from the vocabulary libraries.
 2)Compare a student's answer to the correct answer, and give a response whether it is correct.
 
+===============================================================================================
 Database and word library
-Users, posts as usual, no special.
 
-About vocabuary library:
-I planned to use database as SAT vocabulary library, but I have trouble to use the javascript generated variable ot array to grab the word and explanation from the SAT 
+1)users, posts as usual, no special. Please see the code on the sql folder
+
+2)About vocabuary library:
+I initially planned to use a SAT Vocabulary database as the vocabulary library. But when I tried to use the javascript generated variable as a user_id to grab the word and explanation from that database (I used ajax, JSON and sql), however, the javascript variable or array just couldn't be understood by the sql written in the php controller. 
+
+I also want to save the array results into the database's users table, so next time when the student login again, he can retrieve the array and continue on his word practice test. But I had same trouble. The javascript just couldn't be inserted by the sql code,ajax, and json. I don't what I have done incorrect. I posted the question on the piazza forum, didn't get a useful suggestion. Eventually, I have to retreat and still use javascript as the vocabulary library as I did on the project 3. The file name is vocabularylibrary.js.
