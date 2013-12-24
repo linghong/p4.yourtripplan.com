@@ -30,7 +30,8 @@ article{
   padding-left:2%;  
   padding-right:2%;
   }
-  .container{
+
+.container{
   position:absolute;
   padding-left:5%;  
   padding-right:5%;
@@ -157,7 +158,6 @@ CSS Codes for Posts and Users
   background-color:#FF6600;
   }
 
-
 .box{
   position:relative;
   width:80%;
@@ -178,7 +178,7 @@ CSS Codes for Posts and Users
   margin:20px;
   }
 
-  .post{
+.post{
   position:relative;
   width:80%;
   height:auto;
@@ -233,6 +233,7 @@ Title , subtitle, menu
   font-size:20px;
   color:#8C2E00; 
 }
+
 #title{
   Margin-top:20px;
   width:90%;
@@ -242,36 +243,19 @@ Title , subtitle, menu
   padding:10px;
   }
 
-#subtitle{
+#testtitle{
   width:90%;
   text-align:left;
   font-size:20px;
   padding:20px;
   margin-bottom:20px;
-  }
+ }
 
-.navorangebar{
-  margin-top:20px;
-  padding:10px;
-  width:460px;
-  height:28px;
-  font-size:22px;
+#practicetitle{
+  width:90%;
+  text-align:left;
+  font-size:18px;
   }
-
-.navorangebar a{
-   width:180px;
-  height:40px;
-   text-decoration: none; 
-  margin: 0px; 
-  color:#001100; 
-  }
-
-.navorangebar a:hover {
-  width:180px;
-  height:40px;
-  color: #00000; 
-  background-color: #ffffff;
-  } 
 
 .button{
   width:100px;
@@ -284,12 +268,12 @@ Clickable buttons for test page and practice page
 ---------------------------------------------------------------------------------------------------------------------------
 */
 .start_test,.re_start{
-  margin-top:20px;
+  margin-top:10px;
   margin-left:50%;
   width:250px;
-  height:50px;
+  height:40px;
   font-size:18px;
-  padding-top:15px;
+  padding-top:10px;
   background-color:#CFC892; 
   }
  
@@ -313,7 +297,7 @@ Clickable buttons for test page and practice page
   margin-bottom:10px;
   }
 
-#check_testanswer, #check_exerciseanswer{
+#check_testanswer{
   margin-left:60px;
   margin-top:30px;
   height:40px;
@@ -350,9 +334,8 @@ Clickable buttons for test page and practice page
 #check_result{
   float:left;
   margin-left:30px;
-  margin-top:10px;
   height:35px;
-  width:180px;
+  width:170px;
   font-size:13px;
   padding:5px;
   background-color:#FFFF99;

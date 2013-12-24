@@ -6,7 +6,7 @@
 
 			<div id="title">Let's First Start With A Vocabulary Test</div>
 			
-			<div id="subtitle">
+			<div id="testtitle">
 			The test will give you 20 words and ask you to select the correct explaination from the four explanation choice it gives you. After you finish it, you'll receive information about how many answers are correct.
 			</div>
 			

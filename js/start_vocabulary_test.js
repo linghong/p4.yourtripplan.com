@@ -88,7 +88,7 @@ Check if the answer is correct
    				}
  		}
  		var score = correct_answer_number*5	
-   	 	$('.result').html('You test score is ' + score + '. <br> You have tested 20 words. '+ correct_answer_number + ' answers are correct, '+wrong_answer_number+ ' answers are wrong.<br>');   				 			
+   	 	$('.result').html('Your test score is ' + score + '. <br> You have tested 20 words. '+ correct_answer_number + ' answers are correct, '+wrong_answer_number+ ' answers are wrong.<br>');   				 			
    	});
 /*--------------------------------------------------------------------------------
 Start a new test
