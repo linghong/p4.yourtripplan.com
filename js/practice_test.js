@@ -54,8 +54,8 @@ Produce a word for testing and the four explanation choices
 	explanationchoice(random_number0,50, vocabularyExplanations);
 
 	//Print out the test word and the four explanations
-	$(".practice_word").html("Question "+i+". "+ practiceVocabulary[random_number0]+
-	'<br><input type="radio" name="answer" class="questions" id="answer0" value="'+wordChoice[0]+'">'+wordChoice[0]+
+	$(".practice_word").html("<div id='question'>Question "+i+". "+ practiceVocabulary[random_number0]+
+  '</div><br><input type="radio" name="answer" class="questions" id="answer0" value="'+wordChoice[0]+'">'+wordChoice[0]+
 	'<br><input type="radio" name="answer" class="questions" id="answer1" value="'+wordChoice[1]+'">'+wordChoice[1]+
 	'<br><input type="radio" name="answer" class="questions" id="answer2" value="'+wordChoice[2]+'">'+wordChoice[2]+
 	'<br><input type="radio" name="answer" class="questions" id="answer3" value="'+wordChoice[3]+'">'+wordChoice[3]+'<br><br>'
