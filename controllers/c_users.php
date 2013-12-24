@@ -54,6 +54,7 @@
 
         DB::instance(DB_NAME)->insert_row('users', $_POST);
         }
+        Router::redirect("/users/login");
     }
 
     public function login($error = NULL){

@@ -14,5 +14,11 @@ for each test, 20 words are  randomly selected from the vocabulary library (curr
 Same as above, but each time it only generates one word. The JavaScript code also drops out any words the students did correct answers, but let students practice more for the words they haven't grasped. 
 
 Javascript used:
-1)method to produce random numbers, and use these numbers to pick up words and word explanation from the vocabulary libraries.
+1)generate random numbers, and use these numbers to pick up words and four word explanations from the vocabulary libraries.
 2)Compare a student's answer to the correct answer, and give a response whether it is correct.
+
+Database and word library
+Users, posts as usual, no special.
+
+About vocabuary library:
+I planned to use database as SAT vocabulary library, but I have trouble to use the javascript generated variable ot array to grab the word and explanation from the SAT 

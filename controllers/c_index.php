@@ -14,7 +14,7 @@ class index_controller extends base_controller {
 	-------------------------------------------------------------------------------------------------*/
 	public function index() {
 
-	#Redirect users not logged in to login page
+		#Redirect users not logged in to login page
         if($this->user)
           Router::redirect('/posts/index');
       
