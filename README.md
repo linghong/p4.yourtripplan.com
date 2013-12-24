@@ -1,6 +1,6 @@
 p4.yourtripplan.com
 ===================
-The site's purpose is to help high school students increase their SAT vocabulary. Its idea came from project 3.
+The site's purpose is to help high school students increase their SAT vocabulary. Its idea came from project 3, but unlike project 3, now only log-in users can use the function, also whatever files I took from project 2 and 3 and developed further, all the issues ever mentioned by the teacher assistant on the project 2 and 3 have been fixed.
 
 Features include:
 1)Baisc fetures: sign up, login, logout, portfolio, avatar

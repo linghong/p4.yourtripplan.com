@@ -12,6 +12,7 @@
 			<div id="re_load"></div>
 			<input type ='button' id="start_practice" value='Start'><br>
 			<div class="practice_word"></div>
+			<div  class="result"></div>
 			<div  id="practice_submit"><div>
-			<div  id="save"></div>
+			
 								

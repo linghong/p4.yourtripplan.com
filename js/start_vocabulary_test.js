@@ -51,6 +51,7 @@ Produce words for testing and their four explanation choices
 		'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer3" value="'+wordChoice[3]+'">'+wordChoice[3]+'<br><br>'
 		);
 
+	$('.result').html('');
 }
 
 /*----------------------------------------------------------------------------------------
@@ -86,8 +87,8 @@ Check if the answer is correct
 			//	wordPerformance[i]=0;
    				}
  		}
- 			
-   	 	alert('You have tested 20 words. '+ correct_answer_number + 'answers are correct, '+wrong_answer_number+ 'answers are wrong.<br>');   				 			
+ 		var score = correct_answer_number*5	
+   	 	$('.result').html('You test score is ' + score + '. <br> You have tested 20 words. '+ correct_answer_number + ' answers are correct, '+wrong_answer_number+ ' answers are wrong.<br>');   				 			
    	});
 /*--------------------------------------------------------------------------------
 Start a new test

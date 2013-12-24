@@ -341,6 +341,12 @@ Clickable buttons for test page and practice page
   background-color:#FFFF99;
   }
 
+.result{
+  padding:15px;
+  font-size:18px;
+  color:blue:;
+}
+
 #check_result{
   float:left;
   margin-left:30px;

@@ -46,7 +46,7 @@ Produce a word for testing and the four explanation choices
 	'<br><input type="radio" name="answer" class="questions" id="answer2" value="'+wordChoice[2]+'">'+wordChoice[2]+
 	'<br><input type="radio" name="answer" class="questions" id="answer3" value="'+wordChoice[3]+'">'+wordChoice[3]+'<br><br>'
 	);
-
+	$(".result").html("");
 /*----------------------------------------------------------------------------------------     
 Check if the answer is correct
 ----------------------------------------------------------------------------------------*/
@@ -65,17 +65,18 @@ Check if the answer is correct
 			//delete word from the practiceVocabulary library
 			practiceVocabulary.splice(random_number0,1); 
 			practiceExplanations.splice(random_number0,1); 
-			alert("Excellent!");
+			$(".result").html("Excellent Answer!");
 			correct_answer_number = correct_answer_number+1;
 			}
 		else{
 			//add another copy of the word in the practiceVocabulary library, that makes it shows up more often
 			practiceVocabulary.unshift(practice_word); 
 			practiceExplanations.unshift(correct_explanation); 
-			alert('Sorry, you gave a wrong answer. Correct answer is: '+correct_explanation+'<br>');	
+			$(".result").html('Sorry, you gave a wrong answer. Correct answer is: '+correct_explanation+'<br>');	
 			wrong_answer_number = wrong_answer_number +1;	
    			}
    		question_number=question_number+1;
+
    	});
 
 	//When finshed all words, show alert, reset the practiceVocabulary practiceExplanations to orignal elements
@@ -87,7 +88,7 @@ Check if the answer is correct
 
 	//check result
 	$('#check_result').click(function(){
-	alert('You have tested '+question_number + ' words. Your made '+ correct_answer_number + ' correct answer, '+wrong_answer_number+ ' wrong answers.'); 
+	$(".result").html('You have tested '+question_number + ' words. Your made '+ correct_answer_number + ' correct answer, '+wrong_answer_number+ ' wrong answers.'); 
    	}); 
 
 /*-------------------------------------------------------------------------
