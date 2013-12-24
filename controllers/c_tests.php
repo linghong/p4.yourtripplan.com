@@ -6,7 +6,9 @@ Class tests_controller extends base_controller{
 
 	//Vocabulary test	
 	 public function index(){
-
+ 	 if(!$this->user){
+          Router::redirect('/');
+        }
 	 	#setup View 
 	 	$this ->template ->content = View::instance ('v_tests_index');
 	 	$this -> template -> title = "Test My SAT Vocabulary";
@@ -26,6 +28,10 @@ Class tests_controller extends base_controller{
 
 	 //practice test
 	 	public function practice(){
+	 	  	if(!$this->user){
+          	Router::redirect('/');
+        	}
+        	
 	 		#setup View
 	 		$this->template->content = View::instance('v_tests_practice');
 
@@ -41,6 +47,15 @@ Class tests_controller extends base_controller{
 
 	 		#Render template
 	 		echo $this ->template;
+	 	}
+
+	 		 //save practice vocabulary array to database
+	 	//public function save_data(){
+	 	//echo vocabulary_string;
+		//$_POST['user_id'] = $this->user ->user_id;
+		//$_POST['array'] = vocabulary_string;
+		
+       // DB::instance(DB_NAME)->insert_row('users', $_POST);
 	 	}
 
 }

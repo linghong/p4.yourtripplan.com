@@ -89,15 +89,30 @@ Check if the answer is correct
 	$('#check_result').click(function(){
 	alert('You have tested '+question_number + ' words. Your made '+ correct_answer_number + ' correct answer, '+wrong_answer_number+ ' wrong answers.'); 
    	}); 
+
 /*-------------------------------------------------------------------------
 Start a new test
 ----------------------------------------------------------------------------*/
 
 	//start a new word test
 	$('.re_start').click(function(){
-			location.reload()
-	});
+	var vocabulary_string = practiceVocabulary.join();
+	   	$.ajax({
+	   	type:'POST',
+	   	url:'/tests/save_data',
+	   	beforeSend:function(){
+	   	//Display a loading message while waiting for the ajax call to complete
+	   	$('#save').html("loading......");
+	   	},
+	   	success: function(response){
+	   	$('#save').html("you data has been saved.");
+	   	},
+	   //	data:{
+	  	//	vocabulary_string: practiceVocabulary.join(),
+	  	//},
+	   	});
+	
+		//location.reload();
+ 	});  	  
 
- });  	  
-
-
+});

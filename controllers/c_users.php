@@ -9,11 +9,12 @@
     public function signup($error = NULL) {
 
         #Set up the view and title
-          $this->template->content = View::instance('v_users_signup');
+          $this->template->content= View::instance('v_index_index');
+          $this->template->signup = View::instance('v_users_signup');
           $this->template->title   = "Sign Up";
 
         # Pass errors
-          $this->template->content->error = $error;
+          $this->template->signup->error = $error;
  
         # Render the view
           echo $this->template;
@@ -57,11 +58,12 @@
 
     public function login($error = NULL){
         #set up view
-        $this->template->content = view::instance ('v_users_login');
+        $this->template->content = View::instance ('v_index_index');
+        $this->template->login = View::instance('v_users_login');
         $this->template->title   = "Login";
 
         # Pass data to the view
-        $this->template ->content ->error = $error;
+        $this->template ->login ->error = $error;
 
         #render template
         echo $this->template;
