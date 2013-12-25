@@ -65,14 +65,16 @@ $('.start_practice').click(function(){
       //Generate a random number used for selecting the test word and the explanation.(Only 50 words from the vocabuary array used for practice)        
       if(practiceVocabulary.length>=50){
       		random_number0 = Math.floor(Math.random()*50)
+          var words_count = 50;
       		}
       		else{
       		random_number0 = Math.floor(Math.random()*practiceVocabulary.length)
+           var words_count = vocabularyExplanations.length;
       		};
 
       //Using explanationchoice function to pick up four word explanation choice from wordChoice array, 
       //Please note the four explanations are picked from original vocabulary library ( newVocabulary and vocabularyExplanations) not the practiceExplanations to ensure maxium selection
-      explanationchoice(random_number0,vocabularyExplanations.length, vocabularyExplanations,practiceExplanations);
+      explanationchoice(random_number0,words_count, practiceExplanations,vocabularyExplanations);
 
       //Print out the test word and the four explanations
       $(".practice_word").html("<div id='question'>Question "+i+". "+ practiceVocabulary[random_number0]+
