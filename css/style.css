@@ -305,13 +305,13 @@ Clickable buttons for test page and practice page
   background-color:#CFC892; 
   }
 
-.start_practice{
+.start_practice, #next_word{
   margin-left:30px;
   margin-top:10px;
   margin-bottom:10px;
   padding:5px;
   height:30px;
-  width:100px;
+  width:120px;
   font-size:18px;
   font-weight: bold;
   background-color:#FFFF99; 

@@ -14,6 +14,8 @@
 		<div class="start_practice" id="section2" >Section2</div>
 		<div class="start_practice" id="section3" >Section3</div>
 		<div class="start_practice" id="section4" >Section4</div>
+		<div class="start_practice" id="allsections" >All Sections</div>
+		<div id="nextword"></div>
 		<div class="practice_word"></div>
 		<div  class="result"></div>	
 		<div  id="practice_submit"><div>						

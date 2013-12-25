@@ -32,7 +32,7 @@ Produce words for testing and their four explanation choices
 	 		}
 		}
 	//Use the explanationchoice function to produce four explanation choices for each test word
-	explanationchoice(randomNumber[i],newVocabulary.length, vocabularyExplanations);
+	explanationchoice(randomNumber[i],newVocabulary.length, vocabularyExplanations,vocabularyExplanations);
 	
 	//List the test word and the four explanations on the screen
 	wordQuestion = new Array
