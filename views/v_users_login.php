@@ -1,5 +1,4 @@
 <h2>Log in</h2>
-
 <form class="box" method='POST' action='/users/p_login'>
    Email: <input type='text' name='email'><br><br>
 

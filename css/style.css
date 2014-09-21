@@ -8,57 +8,22 @@ Author: Linghong Chen
 Main CSS Codes
 ---------------------------------------------------------------------------------------------------------------------------
 */
-article,body{
-	display:block;
-  }
 
 body{
-  color:black;
-  font-size:15px;
   font-family:"Truebuchet MS", "Helvetica", Serif;
-  width:1024px;
-  text-align:center;
   background-color:#8C2E00; 
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-position:center; 
-  }
-
-article{
-  padding:20px;
-  text-align:justify;
-  padding-left:2%;  
-  padding-right:2%;
   }
 
 .container{
-  position:absolute;
-  padding-left:5%;  
-  padding-right:5%;
-  margin-left:5%;
-  margin-right:5%;
-  margin-top:100px;
-  color:black;
-  font-size:15px;
   font-family:"Truebuchet MS", "Helvetica", Serif;
-  width:80%;
-  height:3500px;
-  text-align:center;
   background-color: #FFFFCA;
   }
 
  .sitetitle{
-  position:absolute;
-  padding-left:5%;  
-  padding-right:5%;
-  margin-left:5%;
-  margin-right:5%;
-  width:80%;
   height:80px;
   margin-bottom:20px;
   text-align:center;
   font-size:36px;
-  padding-top:10px;
   background-color: #FFFFCA;
   }
 
@@ -74,10 +39,9 @@ h2{
 
 p{
   font-size:18px;
-  width:90%;
   height: auto;
   padding:10px;
-  text-align:left;
+  text-align:justify;
  }
 
 ul{
@@ -102,40 +66,37 @@ Front page
 ---------------------------------------------------------------------------------------------------------------------------
 */
 
-.leftcolumn{
-  float:left;
-  margin-left:2%;
+.frontbox{
+  text-align:center;
+  margin-left:4%;
+  margin-top:20px;
+  width:90%;
   padding:20px;
-  margin-top:40px;
-  width: 40%; 
   height:auto; 
   background-color:#F8DAA3; 
   border: 5px solid #844242;
   }
-
-.rightcolumn{
-  float:right;
-  width:50%; 
-  height:auto; 
-  }
   
 #top{
-  margin-top:40px;
-  position:relative;
-  width:60%;
+  text-align:center;
+  margin-top:20px;
+  margin-bottom:20px;
   height:auto;
   background-color: #844242;
   border: 2px solid #844242;
-  margin-left:10%;
   }
 
 #bottom{
+  text-align:center;
   margin-top:20px;
-  position:relative;
-  width: 80%;
+  margin-bottom:20px;
   height:auto;
   background-color: #844242;
   border: 2px solid #844242;
+  }
+
+  form{
+  width: 80%;
   }
 
 .clear{
@@ -161,11 +122,11 @@ CSS Codes for Posts and Users
 .box{
   position:relative;
   width:80%;
+  margin:5%;
   background-color:#F8DAA3;
   border:3px solid #FF9F40; 
   height:auto;
   padding:5%;
-  margin:5%;
   text-align:center;
   }
 
