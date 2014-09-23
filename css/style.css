@@ -17,6 +17,7 @@ body{
 .container{
   font-family:"Truebuchet MS", "Helvetica", Serif;
   background-color: #FFFFCA;
+  height: 5000px;
   }
 
  .sitetitle{
@@ -49,7 +50,7 @@ ul{
  }
 
 nav{
- padding-top:20px;
+ background-color:#eeee9f; 
  }
 
 nav li{
@@ -75,6 +76,12 @@ Front page
   height:auto; 
   background-color:#F8DAA3; 
   border: 5px solid #844242;
+  }
+
+  @media screen and (max-width:678px){
+    .frontbox p{
+      visibility:hidden;
+    }
   }
   
 #top{
@@ -196,11 +203,11 @@ Title , subtitle, menu
 }
 
 #title{
-  width:90%;
-  height:35px;
   text-align:center;
   font-size:30px;
-  padding:10px;
+  padding:20px;
+  margin-top:10px;
+  margin-bottom:20px;
   }
 
 #testtitle{
@@ -212,7 +219,6 @@ Title , subtitle, menu
  }
 
 #practicetitle{
-  width:90%;
   text-align:left;
   font-size:18px;
   }
@@ -238,10 +244,9 @@ Clickable buttons for test page and practice page
   }
  
 .word{
-  margin-left: 10px;
   text-align:left;
   font-size:28px;
-  padding:10px;
+  padding:20px;
   margin-bottom:10px;
   }
 
@@ -267,13 +272,12 @@ Clickable buttons for test page and practice page
   }
 
 .start_practice, #next_word{
-  margin-left:30px;
-  margin-top:10px;
+  text-align:center;
+  margin-top:20px;
   margin-bottom:10px;
   padding:5px;
-  height:30px;
-  width:120px;
-  font-size:18px;
+  height:60px;
+  font-size:24px;
   font-weight: bold;
   background-color:#FFFF99; 
   border:2px solid #CFC892; 
