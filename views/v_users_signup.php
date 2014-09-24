@@ -8,19 +8,23 @@
     
 
 
-<form class="box" method='POST' action='/users/p_signup'>
+<form class="box" role="form" method='POST' action='/users/p_signup'>
+    <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type='text' id='first_name' name='first_name' class='form-control' placeholder='First Name'>
+    </div>
+    <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type='text' id='last_name' name='last_name' class='form-control' placeholder='Last Name'>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type='text' id='email' name='email' class='form-control' placeholder='Email'>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type='password' id='password' name='password' class='form-control' placeholder='Password'>
+    </div>
 
-    First Name :<input type='text' id='first_name' name='first_name'>
-    <br><br>
-
-    Last Name:<input type='text' id='last_name' name='last_name'>
-    <br><br>
-
-    Email:<input type='text' id='email' name='email'>
-    <br><br>
-
-    Password:<input type='password' id='password' name='password'>
-    <br><br>
-
-    <input type='submit' class='button' value='Sign Up'>
+    <button  type='Submit' class="btn btn-default">Sign Up </button>
 </form>

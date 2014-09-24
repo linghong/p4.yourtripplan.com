@@ -127,9 +127,9 @@ CSS Codes for Posts and Users
   }
 
 .box{
-  position:relative;
-  width:80%;
-  margin:5%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-bottom:30px;
   background-color:#F8DAA3;
   border:3px solid #FF9F40; 
   height:auto;
