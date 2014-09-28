@@ -1,7 +1,7 @@
 /*
-Title:My P4 Project
-Description: Harvard Extension Class: Dynamic Website Application, Project 3
-URI: http://p3.yourtripplan.com/
+Title:Vocabulary Helper
+Description: The code was originally coming from my Harvard class: Dynamic Website Application, Project 3
+with continued work on CSS and javascript styling
 Author: Linghong Chen
 */
 /*------------------------------------------------------------------------------------------------------------------------
@@ -11,23 +11,30 @@ Main CSS Codes
 
 body{
   font-family:"Truebuchet MS", "Helvetica", Serif;
-  background-color:#8C2E00; 
+  background-color:white;#8C2E00; 
   }
 
 .container{
   font-family:"Truebuchet MS", "Helvetica", Serif;
-  background-color: #FFFFCA;
+  background-color:#FFFFFF;
   height: 5000px;
   }
 
+  header{
+  padding:20px;
+  height:130px;
+  margin-bottom:30px;
+  background-color:#FFFFFF;
+  }
+
+  /*
  .sitetitle{
-  height:80px;
   margin-bottom:20px;
   text-align:center;
   font-size:36px;
   background-color: #FFFFCA;
   }
-
+*/
 h1{
   font-weight:bold;
   font-size:22px;
@@ -49,13 +56,11 @@ ul{
  text-align:left;
  }
 
-nav{
- background-color:#eeee9f; 
- }
-
-nav li{
- display:inline;
-  }
+.navbar-default{
+  background-color: #F0E6FA; #D6D6C1;
+  color:#000000;
+  height:40px;
+} 
 
 span{
 font-weight:bold;
@@ -69,28 +74,26 @@ Front page
 
 .frontbox{
   text-align:center;
-  margin-left:4%;
   margin-top:20px;
-  width:90%;
-  padding:20px;
-  height:auto; 
-  background-color:#F8DAA3; 
-  border: 5px solid #844242;
+  padding:20px; 
+  background-color:white; #F0E6FA; 
+  border: 5px solid #D1B2F0; #844242;
   }
 
+/*
   @media screen and (max-width:678px){
     .frontbox p{
-      visibility:hidden;
+      visibility:none;
     }
   }
-  
+ */ 
 #top{
   text-align:center;
   margin-top:20px;
   margin-bottom:20px;
   height:auto;
-  background-color: #844242;
-  border: 2px solid #844242;
+  background-color: #D1B2F0; #844242;
+  border: 2px solid #E0CCF5;#844242;
   }
 
 #bottom{
@@ -98,8 +101,8 @@ Front page
   margin-top:20px;
   margin-bottom:20px;
   height:auto;
-  background-color: #844242;
-  border: 2px solid #844242;
+  background-color:#D1B2F0; #844242;
+  border: 2px solid #E0CCF5;#844242;
   }
 
   form{
@@ -113,6 +116,28 @@ Front page
 .error{
   color:red;
   }
+
+  .btn-default {
+  color: white;
+  background-color: #944DDB;
+  border-color: #3D007A
+}
+/*
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+*/
 /*------------------------------------------------------------------------------------------------------------------------
 CSS Codes for Posts and Users
 ---------------------------------------------------------------------------------------------------------------------------
@@ -127,11 +152,11 @@ CSS Codes for Posts and Users
   }
 
 .box{
-  margin-left:5%;
-  margin-right:5%;
+  margin-left:10%;
+  margin-right:10%;
   margin-bottom:30px;
-  background-color:#F8DAA3;
-  border:3px solid #FF9F40; 
+  background-color:#F0E6FA;#F8DAA3;
+  border:4px solid #E0CCF5;#FF9F40; 
   height:auto;
   padding:5%;
   text-align:center;
@@ -197,24 +222,18 @@ Title , subtitle, menu
 ---------------------------------------------------------------------------------------------------------------------------
 */
 #preface{
-  padding:10px;
   font-size:20px;
-  color:#8C2E00; 
 }
 
 #title{
   text-align:center;
   font-size:30px;
-  padding:20px;
   margin-top:10px;
   margin-bottom:20px;
   }
 
 #testtitle{
-  width:90%;
-  text-align:left;
   font-size:20px;
-  padding:20px;
   margin-bottom:20px;
  }
 
@@ -244,9 +263,7 @@ Clickable buttons for test page and practice page
   }
  
 .word{
-  text-align:left;
   font-size:28px;
-  padding:20px;
   margin-bottom:10px;
   }
 

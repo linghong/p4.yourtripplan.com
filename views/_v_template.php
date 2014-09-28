@@ -18,10 +18,26 @@
 		<div class="container">	
 		<!-- Site Header.................................................Site Header-->
 			<!--row1: Site Name-->
-			<header class="row sitetitle" >
-				SAT Vocabulary Helper
-			</header>
-
+			<header class="row " >
+				<div class="col-lg-2 col-md-3">
+					<img class="img-responsive" src=../uploads/edugym-logo.png alt="logo" >
+				</div>
+				<div class="col-lg-10 col-md-9">
+					<div id="locations" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src=../uploads/edugym-header3.jpg alt="header">
+							</div>
+							<div class="item">
+								<img src=../uploads/edugym-header8.jpg alt="header">
+							</div>
+							<div class="item">
+								<img src=../uploads/edugym-header9.jpg alt="header">
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>	
 
 		<!-- Site Main body.............................................Site Main body-->
 		<!-- for users who are logged in, add Menu and Content-->
@@ -29,7 +45,7 @@
 			<!--row2: navigation -->
 			<div class="row">
 				<nav class="navbar navbar-default" role="navigation">
-					 <div class="navbar-header">
+					<div class="navbar-header">
 		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 		                    <span class="sr-only">Toggle navigation</span>
 		                    <span class="icon-bar"></span>
@@ -60,19 +76,41 @@
 
 		<!-- for users who are not logged in, Sign up or login -->
 		<?php else: ?>
-			<!--row2-->
+			<!--row2: navigation -->
 			<div class="row">
-				<aside class="col-lg-5 col-md-5 ">
+				<nav class="navbar navbar-default" role="navigation">
+					 <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+		                    <span class="sr-only">Toggle navigation</span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+	            	</div>
+	            	<div class="collapse navbar-collapse" id="collapse">
+						<ul class="nav navbar-nav">
+							<li><a href='/'>Home</a></li>
+							<li><a href='/tests/practice'>Vocabulary Lessons</a></li>
+							<li><a href='/users/signup'>Signup</a></li>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+
+			<!--row3 -->
+			<div class="row">
+				<aside class="col-lg-7 col-md-7 col-sm-12">
 					<?php if(isset($content)) echo $content; ?>
 				</aside>
 
-				<article class="col-lg-7 col-md-7 ">
+				<article class="col-lg-5 col-md-5 col-sm-12">
 
-					<div id="top" class="col-lg-offset-2  col-lg-8 col-md-offset-2 col-md-8 col-sm-5 col-xs-offset-1 col-xs-10 ">
+					<div id="top" class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
 						<?php if(isset($login)) echo $login; ?>
 					</div>
 
-					<div id="bottom" class="col-lg-offset-1 col-lg-10  col-md-offset-1 col-md-10 col-sm-5 col-xs-offset-1 col-xs-10 ">
+					<div id="bottom" class="col-lg-12 col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
 						<?php if(isset($signup)) echo $signup; ?>
 					</div> 
 				</article>
