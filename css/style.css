@@ -21,9 +21,7 @@ body{
   }
 
   header{
-  padding:20px;
-  height:130px;
-  margin-bottom:30px;
+  padding:1em;
   background-color:#FFFFFF;
   }
 
@@ -76,17 +74,17 @@ Front page
   text-align:center;
   margin-top:20px;
   padding:20px; 
-  background-color:white; #F0E6FA; 
-  border: 5px solid #D1B2F0; #844242;
+  background-color:#FFFFFF; #F0E6FA; 
+  border: 4px solid #C285A3;  #844242;
   }
 
-/*
-  @media screen and (max-width:678px){
-    .frontbox p{
+
+  @media screen and (max-width:578px){
+    .headerslide{
       visibility:none;
     }
   }
- */ 
+ 
 #top{
   text-align:center;
   margin-top:20px;
@@ -230,6 +228,7 @@ Title , subtitle, menu
   font-size:30px;
   margin-top:10px;
   margin-bottom:20px;
+  font-family:"Arno Pro Smbd Caption",  Serif;
   }
 
 #testtitle{
