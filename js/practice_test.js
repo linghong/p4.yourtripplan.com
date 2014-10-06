@@ -1,6 +1,52 @@
 /*==============================================================================================================================
 For Word Practice Exercise Page
 ================================================================================================================================*/
+/*For Vocabulary Card*/
+$('.vocabulary_section').click(function(){
+    var value = $(this).text();
+
+  /*
+  Determinane section number
+  As a demo site, it currently has only 200 SAT vocabulary. I divide them as four sections, with 50 words each section.
+  assign practiceVocabulary and practiceExplanations for words related to the clicked section 
+  */  
+  if(value=="Section One"){
+    section_number = 0;
+  }
+  else if (value=="Section Two"){
+    section_number = 25;
+  }
+  else if (value=="Section Three"){
+    section_number = 50;
+  }
+   else if (value=="Section Four"){
+    section_number =75;
+  }
+  else if (value=="Section Five"){
+    section_number = 100;
+  }
+  else if (value=="Section Six"){
+    section_number = 125;
+  }
+  else if (value=="Section Seven"){
+    section_number = 150;
+  }
+  else{
+    section_number = 175;
+  }
+
+ //print out the word in this section
+  vocabularycard="";
+  for(i=0;i<25;i++){
+    vocabularycard=vocabularycard + "<div class='vocabulary_card'>"+
+        "<div class='col-lg-3 col-md-3'><strong>"+newVocabulary[section_number+i]+"</strong></div>" +
+        "<div class='col-lg-9 col-md-9'>"+vocabularyExplanations[section_number+i]+"</div></div>"; 
+  }
+  $('.vocabulary').html(vocabularycard);  
+});
+
+
+/*For Vocabulary test*/
 //Set question number as i, and start it as 0 
 $('.start_practice').click(function(){
 
@@ -9,33 +55,43 @@ $('.start_practice').click(function(){
     
     //As a demo site, it currently has only 200 SAT vocabulary. I divide them as four sections, with 50 words each section.
     //assign practiceVocabulary and practiceExplanations for words related to the clicked section    
-    if(value=="Section1"){
-        practiceVocabulary = newVocabulary.slice(0,50);
-        practiceExplanations = vocabularyExplanations.slice(0,50); 
+    if(value=="Section One Test"){
+        section_number =0; 
        }
-    else if(value=="Section2")
+    else if(value=="Section Two Test")
         {
-        practiceVocabulary = newVocabulary.slice(50,100);
-        practiceExplanations = vocabularyExplanations.slice(50,100);
-               }
-    else if(value=="Section3")
-        {
-        practiceVocabulary = newVocabulary.slice(100,150);
-        practiceExplanations = vocabularyExplanations.slice(100,150);
+        section_number=25;
         }
-    else if(value=="Section4"){
-        practiceVocabulary = newVocabulary.slice(150,200);
-        practiceExplanations = vocabularyExplanations.slice(150,200);
+    else if(value=="Section Three Test")
+        {
+        section_number=50;
+        }
+    else if(value=="Section Four Test"){
+         section_number=75;
+        }
+    else if(value=="Section Five Test"){
+         section_number=100;
+       }
+    else if(value=="Section Six Test")
+        {
+         section_number=125;
+        }
+    else if(value=="Section Seven Test")
+        {
+         section_number=150;
         }
     else{
-        //Generate two arrays for word practice library.
-        practiceVocabulary = newVocabulary;
-        practiceExplanations = vocabularyExplanations;
-        };
+        section_number=175;
+        }
+
+    //make a practice library   
+    practiceVocabulary = newVocabulary.slice(section_number,section_number+25);
+    practiceExplanations = vocabularyExplanations.slice(section_number,section_number+25);
 
     //make a new button
-    $(".start_practice").hide();
-    $("#nextword").html('<input type ="submit"  id="next_word" value="Next Word">');
+    $(".vocabulary_practice").hide();
+    $(".all_section").hide();
+    $("#nextword").html('<button id="next_word" clas="button btn-default">Next</button>');
 
 
     //set up original number to zero. 
@@ -51,7 +107,7 @@ $('.start_practice').click(function(){
       $("#practicetitle").hide();
 
       //start it again 
-      $("#re_load").html('<input type ="submit"  class="re_start" id="practice_reload" value="Start a New Test"><p>Pick up the correct answer choice listed below the word. Click the "Next Word" button to answer another question.</p> <p>Before clicking the start button to go to a new question, always click "check answer for this word" to check whether your answer is correct, unless you want skip  the  question.</p>');
+      $("#re_load").html('<input type ="submit"  class="re_start" id="practice_reload" value="Start a New Test"><p>Pick up the correct answer choice listed below the word. Click the "Next" button to answer another question.</p> <p>Before clicking the "Next" button to go to next word question, always click "check answer for this word" to check whether your answer is correct, unless you want skip  the  question.</p>');
 
       //show check answer and check score buttons
       $("#practice_submit").html('<input type ="submit"  id="check_exerciseanswer" value="Check Answer for this Word"><br><input type ="submit"  id="check_result" value="Check My Test Score"><br><br>');
@@ -62,10 +118,10 @@ $('.start_practice').click(function(){
       //Question number increase by each click
       i=i+1;
 
-      //Generate a random number used for selecting the test word and the explanation.(Only 50 words from the vocabuary array used for practice)        
-      if(practiceVocabulary.length>=50){
-      		random_number0 = Math.floor(Math.random()*50)
-          var words_count = 50;
+      //Generate a random number used for selecting the test word and the explanation.(Only 25 words from the vocabuary array used for practice)        
+      if(practiceVocabulary.length=25){
+      		random_number0 = Math.floor(Math.random()*25)
+          var words_count = 25;
       		}
       		else{
       		random_number0 = Math.floor(Math.random()*practiceVocabulary.length)

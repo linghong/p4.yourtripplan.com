@@ -100,6 +100,7 @@
           Router::redirect("/users/login/error");
         }
     }
+    
     public function logout(){
   
       #Generate and save a new token for next login
@@ -116,6 +117,30 @@
 
       #Send them back to the main index.
         Router::redirect("/");
+    }
+
+     public function lessons() {
+        if($this->user){
+            Router::redirect('/tests/practice');
+        }
+        #Set up the view and title
+          $this->template->content = View::instance('v_users_lessons');
+          $this->template->login = View::instance('v_users_login');
+          $this->template->signup = View::instance('v_users_signup');
+          $this->template->title   = "Practice Lessons";
+
+       #JavaScript Files
+        $client_files_body = Array (
+          //'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+          '/js/vocabularylibrary.js',
+          '/js/explanationchoice.js',
+          '/js/practice_test.js'
+        );
+
+        $this ->template ->client_files_body = Utils::load_client_files($client_files_body);
+
+        # Render the view
+          echo $this->template;
     }
 
     public function profile($user_name = NULL){
@@ -137,7 +162,7 @@
           created,
           email,
           avatar
-        FROM yourtri1_dwa15p4.users
+        FROM users
         WHERE user_id = '.$this->user->user_id;
 
       #Run the query, store the results in the variable $posts

@@ -20,7 +20,7 @@
 			<!--row1: Site Name-->
 			<header class="row " >
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<img class="img-responsive" src="/uploads/edugym-logo.png" alt="logo" >
+					<img class="img-responsive" src="/uploads/edugym-logo.png" alt="logo">
 				</div>
 				<div class="col-lg-9 col-md-9 col-sm-9  headerslide">
 					<div id="locations" class="carousel slide" data-ride="carousel">
@@ -90,7 +90,7 @@
 		            	<div class="collapse navbar-collapse" id="collapse">
 							<ul class="nav navbar-nav">
 								<li><a href='/'>Home</a></li>
-								<li><a href='/tests/practice'>Vocabulary Lessons</a></li>
+								<li><a href='/users/lessons'>Vocabulary Lessons</a></li>
 								<li><a href='/users/signup'>Signup</a></li>
 
 							</ul>
@@ -105,19 +105,37 @@
 					</aside>
 
 					<article class="col-lg-5 col-md-5 col-sm-12">
-
-						<div id="top" class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
+						<div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
 							<?php if(isset($login)) echo $login; ?>
 						</div>
 
-						<div id="bottom" class="col-lg-12 col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
+						<div class="col-lg-12 col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
 							<?php if(isset($signup)) echo $signup; ?>
 						</div> 
 					</article>
 				</div>
 
 			<?php endif; ?>
-		</div>	
+		</div><!-- end container -->	
+
+		 <!-- modal windows -->
+		<div id="vocabularycard" class="modal fade" tabindex="-1">
+			<div class="modal-dialogue">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close glyphicon glyphicon-remove" data-dismiss="modal"></button>
+							<h1 class="modal-title">Section One Vocabulary</h1>			
+					</div>
+					<div class="row modal-body">
+						<div class="vocabulary"></div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary" data-dismiss="modal" class="close">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 
