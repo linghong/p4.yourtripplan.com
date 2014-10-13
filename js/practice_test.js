@@ -4,9 +4,10 @@ For Word Practice Exercise Page
 /*For Vocabulary Card*/
 $('.vocabulary_section').click(function(){
     var value = $(this).text();
+    var section_number;
 
   /*
-  Determinane section number
+  Determine section number
   As a demo site, it currently has only 200 SAT vocabulary. I divide them as four sections, with 50 words each section.
   assign practiceVocabulary and practiceExplanations for words related to the clicked section 
   */  
@@ -35,13 +36,101 @@ $('.vocabulary_section').click(function(){
     section_number = 175;
   }
 
- //print out the word in this section
-  vocabularycard="";
+  //print out the word in this section
+  var vocabularycard="";
+  var pronunciationLink = [];
+  var exampleLink = [];
+  var link_front ="<a href='http://media.merriam-webster.com/soundc11/"; //for word pronunciation link
+  var example_front = "https://translate.google.com/#auto/en/"; //for word example link
+     
+
+
+  //show all the vocabulary in the clicked section on the screen
   for(i=0;i<25;i++){
+          console.log(i);
+    var word_number = section_number+i;
+
+    //Get the word sentence example link from google translate
+    exampleLink[word_number] =example_front.concat(newVocabulary[word_number]);
+    
+    //Get the word pronunciation links from merriam-webster.com   
+    var word_length=newVocabulary[word_number].length;
+    var first_char = newVocabulary[word_number].charAt(0).toString();
+
+    getSurfix(newVocabulary[word_number]); //run the getsurfix function to get surfix
+    console.log(surfix);
+
+    if(surfix=="ness" ||surfix=="ly"||surfix=="-on"||newVocabulary[word_number]=="cynosure"||newVocabulary[word_number]=="habitude"){ 
+        pronunciationLink[word_number]="<span class='glyphicon glyphicon-volume-off'></span>";
+    }
+    else {
+      //word's length <=6 Get the word pronunciation link from merriam-webster.com
+      if (word_length<7){
+        switch(word_length){
+          case 1:
+           pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+           "0000001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+           break;
+
+          case 2 :
+            pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+            "000001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+            break;
+          case 3 :
+          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+           "00001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+          break;
+          
+          case 4 :
+          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+          "0001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+          break;
+          
+          case 5 :
+          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+           "001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+          break;
+          
+          case 6 :
+          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+           "01.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+          break;
+        }
+    }
+
+      /*  when the word's length >6, the pronunciation link is irregliar, i,e.the link tail may not be".01wav" unless only one word can be found, 
+      when excluding the word has surfix or complex word, marjority of the words that are the first six letters are same can be excluded
+      however, use it as cautious. On some rare chance, opposite can exist. 
+      since it is the best way to precidit the link, we made the wordSurfix(also some complexword) library, use it to exclude the words, 
+      so be aware its limit.
+      */  
+      //word_length>6 and surfix is existed, but odd situation
+      else  if (newVocabulary[word_number]=="eccentric"||newVocabulary[word_number]=="extricate"||newVocabulary[word_number]=="exuberance"||newVocabulary[word_number]=="habitual"||newVocabulary[word_number]=="facsimile"||newVocabulary[word_number]=="fabulous"){
+          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number].slice(0,6)+
+           "01.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>"; 
+      } 
+          
+      //word_length>6 and surfix is existed, use glyphicon-volume-off     
+      else if (word_length>6 & (specialsurfix !="#")){
+       pronunciationLink[word_number]="<span class='glyphicon glyphicon-volume-off'></span>";
+
+      //when the word's length >6 & no surfix inside the suffix library    
+      }else {
+         pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number].slice(0,6)+
+           "01.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
+      }
+
+    }
+     console.log("pronunciationLink: "+pronunciationLink[word_number]);
+
+    //get the string of all the vocabulary need to be shown on the screen 
     vocabularycard=vocabularycard + "<div class='vocabulary_card'>"+
-        "<div class='col-lg-3 col-md-3'><strong>"+newVocabulary[section_number+i]+"</strong></div>" +
-        "<div class='col-lg-9 col-md-9'>"+vocabularyExplanations[section_number+i]+"</div></div>"; 
+      "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-6'><strong>"+newVocabulary[word_number]+"</strong></div>" +
+      "<div class='col-lg-1 col-md-2 col-md-2 col-xs-3'>"+pronunciationLink[word_number]+" <a target='_blank' href='"+exampleLink[word_number]+"'><span class='glyphicon glyphicon-folder-open'></span></a></div>"+
+      "<div class='col-lg-9 col-md-7 col-md-12 col-xs-12'>"+vocabularyExplanations[word_number]+"</div>"
+      "</div>"; 
   }
+  //show the string on the screen
   $('.vocabulary').html(vocabularycard);  
 });
 

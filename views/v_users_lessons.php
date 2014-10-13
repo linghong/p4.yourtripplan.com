@@ -7,7 +7,7 @@
 	<div id="practicetitle">
 		<P>The vocabulary of the practice library is equally divided into several sections. You can study any section at any time. </p>
 			<p>To view all the vocabulary in that section, click the section number button. A window that lists all the vocabulary belonging to that section will pop up. 
-		<p>You can also click the "Section Test" button to do the vocabulary test for this section. When your are doing the test, the site will automactically memorize the words you are familiar with, and let you meet more for the words that you haven't grasped. By this way, you'll learn new vocabulary fast.</p>
+		<p>You can also click the "Section Test" button to do the vocabulary test for this section. When you are doing the test, the site will automatically memorize the words you are familiar with, and let you meet more for the words that you haven't grasped. By this way, you'll learn new vocabulary fast.</p>
 	</div>
 </div>
 
