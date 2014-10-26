@@ -52,7 +52,7 @@ Produce words for testing and their four explanation choices
 
 	//clear the test results on the screen
 	$('.result').html('');
-}
+	}
 
 /*----------------------------------------------------------------------------------------
 Check if the answer is correct

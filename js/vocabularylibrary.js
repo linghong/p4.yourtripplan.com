@@ -609,3 +609,19 @@ var nineSurfix =[
 "ure",  
 "y"  
 ]   
+
+//object
+var wordExclude =[
+  "eccentric",
+  "extricate",
+  "exuberance",
+  "habitual",
+  "facsimile",
+  "fabulous",
+  "facilitate"
+  ]
+
+  var wordInclude =[
+ "cynosure",
+ "habitude"
+  ]

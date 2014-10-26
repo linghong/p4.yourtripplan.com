@@ -11,7 +11,6 @@ function getSurfix(word){
   surfix =""; //word surfix
   specialsurfix =""; //word surfix only for those wordswith seven-nine letters that won't be labeled with number "1"
   var word_length=word.length;
-  console.log("word length: " +word_length);
 
   //a word's surfix can have different word length 
   var one_letter= word.slice(word_length-1, word_length);
@@ -30,75 +29,64 @@ function getSurfix(word){
     for (j=0;j<wordSurfix.length;j++){
       if(wordSurfix[j]== two_letters){
         surfix= two_letters;
-    }
-    else if(wordSurfix[j]== three_letters){
-      surfix = three_letters;
-    }
-    else if(wordSurfix[j]== four_letters){
-      surfix = four_letters;
-    } else if(wordSurfix[j]== five_letters){
-      surfix = five_letters;
-    }else{
-      surfix = "#";
-    }
+      } else if(wordSurfix[j]== three_letters){
+        surfix = three_letters;
+      } else if(wordSurfix[j]== four_letters){
+        surfix = four_letters;
+      } else if(wordSurfix[j]== five_letters){
+        surfix = five_letters;
+      } else {
+        surfix = "#";
+      }
       if(surfix != "#")break;
     }
-      console.log(surfix);
 
-    if (word_length ==7){
-      for (k=0;k<sevenSurfix.length;k++){
-        if(sevenSurfix[k]== two_letters){
-          specialsurfix= two_letters;
-        }
-        else if(sevenSurfix[k]== three_letters){
-          specialsurfix = three_letters;
-        }
-        else if(sevenSurfix[k]== four_letters){
-          specialsurfix = four_letters;
-        } else if(sevenSurfix[k]== five_letters){
-          specialsurfix = five_letters;
-        }else{
-          specialsurfix = "#";
-        }
-          if(specialsurfix != "#")break;
-        }
-          console.log(specialsurfix);
+    //special surfix
+    if (word_length <7){
+     var wSurfix=wordSurfix;
+    }
+    else if (word_length ==7){
+     var wSurfix=sevenSurfix;
+    }
+    else if (word_length ==8){
+     var wSurfix=eightSurfix;
+    }
+    else{
+     var wSurfix=nineSurfix;
+    }
+
+    for (j=0;j<wSurfix.length;j++){
+      if(wSurfix[j]== two_letters){
+        specialsurfix= two_letters;
       }
-      else if (word_length ==8){
-        for (l=0;l<eightSurfix.length;l++){
-          if(eightSurfix[l]== two_letters){
-            specialsurfix= two_letters;
-          }
-          else if(eightSurfix[l]== three_letters){
-            specialsurfix = three_letters;
-          }
-          else if(eightSurfix[l]== four_letters){
-            specialsurfix = four_letters;
-          } else if(eightSurfix[l]== five_letters){
-            specialsurfix = five_letters;
-          }else{
-            specialsurfix = "#";
-          }
-            if(specialsurfix != "#")break;
-        }
-        console.log(specialsurfix);
+      else if(wSurfix[j]== three_letters){
+        specialsurfix = three_letters;
       }
-      else{
-        for (m=0;m<nineSurfix.length;m++){
-          if(nineSurfix[m]== two_letters){
-            specialsurfix= two_letters;
-          }else if(nineSurfix[m]== three_letters){
-            specialsurfix = three_letters;
-          }else if(nineSurfix[m]== four_letters){
-            specialsurfix = four_letters;
-          }else if(nineSurfix[m]== five_letters){
-            specialsurfix = five_letters;
-          }else{
-            specialsurfix = "#";
-          }
-          if(specialsurfix != "#")break;
-        }
+      else if(wSurfix[j]== four_letters){
+        specialsurfix = four_letters;
+      } else if(wSurfix[j]== five_letters){
+        specialsurfix = five_letters;
+      }else{
+        specialsurfix = "#";
       }
+        if(specialsurfix != "#")break;
     }  
-    console.log(specialsurfix);
+  }  
+}
+
+function getOdd(word){
+  oddexclude="null";
+  oddinclude="null";
+  for(count=0;count<wordExclude.length; count++){
+    if(wordExclude[count]==word){
+      oddexclude="true"; 
+      break;
+    }
+  }
+   for(count=0;count<wordInclude.length; count++){
+    if(wordInclude[count]==word){
+      oddinclude="true"; 
+      break;
+    }
+  }
 }

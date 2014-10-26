@@ -43,11 +43,8 @@ $('.vocabulary_section').click(function(){
   var link_front ="<a href='http://media.merriam-webster.com/soundc11/"; //for word pronunciation link
   var example_front = "https://translate.google.com/#auto/en/"; //for word example link
      
-
-
   //show all the vocabulary in the clicked section on the screen
   for(i=0;i<25;i++){
-          console.log(i);
     var word_number = section_number+i;
 
     //Get the word sentence example link from google translate
@@ -58,9 +55,9 @@ $('.vocabulary_section').click(function(){
     var first_char = newVocabulary[word_number].charAt(0).toString();
 
     getSurfix(newVocabulary[word_number]); //run the getsurfix function to get surfix
-    console.log(surfix);
+    getOdd(newVocabulary[word_number]); //run the oddWord funtion to check whether the word is not obey to the regular link rule
 
-    if(surfix=="ness" ||surfix=="ly"||surfix=="-on"||newVocabulary[word_number]=="cynosure"||newVocabulary[word_number]=="habitude"){ 
+    if(surfix=="ness" ||surfix=="ly"||surfix=="-on"||oddinclude=="true"){ 
         pronunciationLink[word_number]="<span class='glyphicon glyphicon-volume-off'></span>";
     }
     else {
@@ -73,9 +70,10 @@ $('.vocabulary_section').click(function(){
            break;
 
           case 2 :
-            pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
+          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
             "000001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
             break;
+
           case 3 :
           pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number]+
            "00001.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
@@ -105,7 +103,7 @@ $('.vocabulary_section').click(function(){
       so be aware its limit.
       */  
       //word_length>6 and surfix is existed, but odd situation
-      else  if (newVocabulary[word_number]=="eccentric"||newVocabulary[word_number]=="extricate"||newVocabulary[word_number]=="exuberance"||newVocabulary[word_number]=="habitual"||newVocabulary[word_number]=="facsimile"||newVocabulary[word_number]=="fabulous"){
+      else  if (oddexclude=="true"){
           pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number].slice(0,6)+
            "01.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>"; 
       } 
@@ -119,21 +117,18 @@ $('.vocabulary_section').click(function(){
          pronunciationLink[word_number]=link_front+first_char+"/"+newVocabulary[word_number].slice(0,6)+
            "01.wav' target='_blank'><span class='glyphicon glyphicon-volume-up'></span></a>";
       }
-
     }
-     console.log("pronunciationLink: "+pronunciationLink[word_number]);
 
     //get the string of all the vocabulary need to be shown on the screen 
     vocabularycard=vocabularycard + "<div class='vocabulary_card'>"+
       "<div class='col-lg-2 col-md-3 col-sm-4 col-xs-6'><strong>"+newVocabulary[word_number]+"</strong></div>" +
       "<div class='col-lg-1 col-md-2 col-md-2 col-xs-3'>"+pronunciationLink[word_number]+" <a target='_blank' href='"+exampleLink[word_number]+"'><span class='glyphicon glyphicon-folder-open'></span></a></div>"+
-      "<div class='col-lg-9 col-md-7 col-md-12 col-xs-12'>"+vocabularyExplanations[word_number]+"</div>"
+      "<div class='col-lg-9 col-md-7 col-md-12 col-xs-12'>"+vocabularyExplanations[word_number]+"</div>"+
       "</div>"; 
   }
   //show the string on the screen
   $('.vocabulary').html(vocabularycard);  
 });
-
 
 /*For Vocabulary test*/
 //Set question number as i, and start it as 0 
@@ -169,19 +164,27 @@ $('.start_practice').click(function(){
         {
          section_number=150;
         }
-    else{
+    else if(value=="Section Eight Test"){
         section_number=175;
         }
+    else{
+        //Generate two arrays for word practice library.
+        section_number=newVocabulary.length;
+        practiceVocabulary = newVocabulary;
+        practiceExplanations = vocabularyExplanations;
+        };
 
-    //make a practice library   
-    practiceVocabulary = newVocabulary.slice(section_number,section_number+25);
-    practiceExplanations = vocabularyExplanations.slice(section_number,section_number+25);
+    //make a practice library 
+    if (section_number<200){   
+      practiceVocabulary = newVocabulary.slice(section_number,section_number+25);
+      practiceExplanations = vocabularyExplanations.slice(section_number,section_number+25);
+    }
 
     //make a new button
-    $(".vocabulary_practice").hide();
-    $(".all_section").hide();
-    $("#nextword").html('<button id="next_word" clas="button btn-default">Next</button>');
 
+    $("#practicetitle").html("<h3>Please click the 'Next' button to start the vocabulary test.</h3>");
+    $(".vocabulary_practice").hide();
+    $("#nextword").html('<button id="next_word" clas="button btn-royalty btn-wide">Next</button>'); 
 
     //set up original number to zero. 
     correct_answer_number=0;
@@ -207,15 +210,9 @@ $('.start_practice').click(function(){
       //Question number increase by each click
       i=i+1;
 
-      //Generate a random number used for selecting the test word and the explanation.(Only 25 words from the vocabuary array used for practice)        
-      if(practiceVocabulary.length=25){
-      		random_number0 = Math.floor(Math.random()*25)
-          var words_count = 25;
-      		}
-      		else{
-      		random_number0 = Math.floor(Math.random()*practiceVocabulary.length)
-           var words_count = vocabularyExplanations.length;
-      		};
+      //Generate a random number used for selecting the test word and the explanation.If it is not the "Test words for all sections", only 25 words from the vocabuary array used for practice.        
+      random_number0 = Math.floor(Math.random()*practiceVocabulary.length)
+      var words_count = vocabularyExplanations.length;
 
       //Using explanationchoice function to pick up four word explanation choice from wordChoice array, 
       //Please note the four explanations are picked from original vocabulary library ( newVocabulary and vocabularyExplanations) not the practiceExplanations to ensure maxium selection
