@@ -64,13 +64,19 @@
 				</nav>
 			</div>
 
-			<!--row3-->
-			<div class="row">
-				<article class = "col-lg-12">
+			<!--row3 -->
+			<div class="row ">
+				<article class="frontbox col-lg-7 col-md-7 col-sm-12">
+					<div></div>				
 					<?php if(isset($content)) echo $content; ?>
 				</article>
-			</div>
 
+				<aside class="col-lg-5 col-md-5 col-sm-12">
+					<div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
+						<?php if(isset($login)) echo $sidebar; ?>
+					</div>
+				</aside>
+			</div>
 
 			<!-- for users who are not logged in, Sign up or login -->
 			<?php else: ?>
@@ -95,21 +101,33 @@
 					</div>
 				</nav>
 			</div>
-		
-			<!--row3 -->
-				<div class="row ">
-					<article>
-						<div></div>				
-						<?php if(isset($content)) echo $content; ?>
-					</article>
-				</div>
 
+			<!--row3 -->
+			<div class="row ">
+				<article class="frontbox col-lg-7 col-md-7 col-sm-12">
+					<div></div>				
+					<?php if(isset($content)) echo $content; ?>
+				</article>
+
+				<aside class="col-lg-5 col-md-5 col-sm-12">
+					<div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
+							<?php if(isset($login)) echo $login; ?>
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
+							<?php if(isset($signup)) echo $signup; ?>
+					</div> 
+				</aside>
+			</div>
 			<?php endif; ?>
-			<footer>
+
+		<footer>
 				©edugym since 2014 | <a href="/">Home</a>|<a href="/">About</a>|<a href='/contact'>Contact Us</a>|
-			</footer>
+		</footer>
+
 		</div><!-- end container -->	
 			
+
 		 <!-- modal windows -->
 		<div id="vocabularycard" class="modal fade" tabindex="-1">
 			<div class="modal-dialogue">
@@ -126,16 +144,12 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
+
 
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script>	
-		    $('.carousel').carousel({
-        		interval:2000
-    		});
-		</script>
+
 		<?php if(isset($client_files_body)) echo $client_files_body; ?>
 
 	</body>

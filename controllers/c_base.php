@@ -5,6 +5,7 @@ class base_controller {
 	public $user;
 	public $userObj;
 	public $template;
+	public $rightsidebartemplate;
 	public $email_template;
 
 	/*-------------------------------------------------------------------------------------------------
@@ -20,6 +21,7 @@ class base_controller {
 						
 		# Set up templates
 			$this->template 	  = View::instance('_v_template');
+			$this->rightsidebartemplate 	  = View::instance('_v_rightsidebartemplate');
 			$this->email_template = View::instance('_v_email');			
 								
 		# So we can use $user in views			

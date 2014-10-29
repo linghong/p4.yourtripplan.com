@@ -21,11 +21,11 @@ class index_controller extends base_controller {
 		
 		# Any method that loads a view will commonly start with this
 		# First, set the content of the template with a view file
-			$this->template->content= View::instance('v_index_index');
-			$this->template->signup= View::instance('v_users_signup');
-			$this->template->login= View::instance('v_users_login');
+			$this->rightsidebartemplate->content= View::instance('v_index_index');
+			$this->rightsidebartemplate->signup= View::instance('v_users_signup');
+			$this->rightsidebartemplate->login= View::instance('v_users_login');
 		# Now set the <title> tag
-			$this->template->title = "SAT Vocabulary helper";
+			$this->rightsidebartemplate->title = "SAT Vocabulary helper";
 
 			     #create an array of client files to be included in the head
 	
@@ -39,7 +39,7 @@ class index_controller extends base_controller {
 	    	*/
 	      					     		
 		# Render the view
-			echo $this->template;
+			echo $this->rightsidebartemplate;
 
 	} # End of method
 	

@@ -9,15 +9,15 @@
     public function signup($error = NULL) {
 
         #Set up the view and title
-          $this->template->content= View::instance('v_index_index');
-          $this->template->signup = View::instance('v_users_signup');
-          $this->template->title   = "Sign Up";
+          $this->rightsidebartemplate->content= View::instance('v_index_index');
+          $this->rightsidebartemplate->signup = View::instance('v_users_signup');
+          $this->rightsidebartemplate->title   = "Sign Up";
 
         # Pass errors
-          $this->template->signup->error = $error;
+          $this->rightsidebartemplate->signup->error = $error;
  
         # Render the view
-          echo $this->template;
+          echo $this->rightsidebartemplate;
 
     }
 
@@ -59,15 +59,15 @@
 
     public function login($error = NULL){
         #set up view
-        $this->template->content = View::instance ('v_index_index');
-        $this->template->login = View::instance('v_users_login');
-        $this->template->title   = "Login";
+        $this->rightsidebartemplate->content = View::instance ('v_index_index');
+        $this->rightsidebartemplate->login = View::instance('v_users_login');
+        $this->rightsidebartemplate->title   = "Login";
 
         # Pass data to the view
-        $this->template ->login ->error = $error;
+        $this->rightsidebartemplate ->login ->error = $error;
 
         #render template
-        echo $this->template;
+        echo $this->rightsidebartemplate;
     }
 
     public function p_login(){
@@ -125,8 +125,6 @@
         }
         #Set up the view and title
           $this->template->content = View::instance('v_users_lessons');
-          $this->template->login = View::instance('v_users_login');
-          $this->template->signup = View::instance('v_users_signup');
           $this->template->title   = "Practice Lessons";
 
        #JavaScript Files
@@ -134,6 +132,7 @@
           //'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
           '/js/vocabularylibrary.js',
           '/js/explanationchoice.js',
+          '/js/getSurfix.js',
           '/js/practice_test.js'
         );
 
@@ -228,6 +227,67 @@
         Router::redirect('/users/profile');
 
     } 
+
+        public function about() {
+
+        #Set up the view and title
+          $this->template->content = View::instance('v_users_about');
+          $this->template->title   = "How Does It Work";
+
+        # Render the view
+          echo $this->template;
+    }
+/*
+      public function contact($error = NULL) {
+
+        #Set up the view and title
+          $this->template->content = View::instance('v_users_contact');
+          $this->template->title   = "Contact US";
+
+        # Pass data to the view
+        $this->template ->login ->error = $error;
+
+        # Render the view
+          echo $this->template;
+    }
+
+ public function p_contact(isset($_POST['submit'])){
+
+      # Prevent from leaving blank fields                
+      if (empty($_POST['name']) 
+        {
+        # Display error message
+        Router::redirect("/users/contact/error");
+        }
+        
+        else{
+        #Sanitize the user entered data
+          $_POST = DB::instance(DB_NAME)->sanitize($_POST);  
+
+        #Store data
+         
+        $name = $_POST['name'];
+        $tool = $_POST['tool'];
+        $continent = $_POST['continent'];
+        $competition = $_POST['competition'];
+        $message = $_POST['message'];
+        $email = $_POST['email'];
+
+        DB::instance(DB_NAME)->insert_row('users', $_POST);
+        }
+
+       $headers = "From: $name <$email>\n";
+       $subject = "Message from contact form";
+       $to_email = admin@edugym.com
+       mail($to_email, $subject, $message, $headers);
+
+        Router::redirect("/users/contact");
+    }
+*/
+
+
+    
+
 
 }
  #end of User_controller class

@@ -43,6 +43,7 @@ Class tests_controller extends base_controller{
 			//'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
 	 		'/js/vocabularylibrary.js',
 	 		'/js/explanationchoice.js',
+	 		'/js/getSurfix.js',
 	 		'/js/practice_test.js'
 	 	);
 
@@ -51,14 +52,5 @@ Class tests_controller extends base_controller{
 	 	#Render template
 	 	echo $this ->template;
 	 }
-
-	 	 //save practice vocabulary array to database
-	 	//public function save_data(){
-	 	//echo vocabulary_string;
-		//$_POST['user_id'] = $this->user ->user_id;
-		//$_POST['array'] = vocabulary_string;
-		
-       // DB::instance(DB_NAME)->insert_row('users', $_POST);
-	 //}
 
 }
