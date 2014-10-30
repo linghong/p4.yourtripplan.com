@@ -1,5 +1,5 @@
 <div class ="row">
-	<div id="title">
+	<div class="title">
 		Let's Do A Vocabulary Practice Exercise
 	</div>		
 </div>
@@ -14,45 +14,21 @@
 
 <div class="row vocabulary_practice">
 	<p>Now click the section button to study to memorize vocabulary.</p>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section One</a>
-		<p>Vocabulary from a to c</p>
-		<button class="button btn-primary btn-wide start_practice">Section One Test</button>		
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Two</a>
-		<p>Vocabulary from c to e</p>
-		<button class="button btn-primary btn-wide start_practice">Section Two Test</button>				
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section" > 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Three</a>
-		<p>Vocabulary from e to h</p>
-		<button class="button btn-primary btn-wide start_practice">Section Three Test</button>		
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Four</a>
-		<p>Vocabulary from h to k</p>
-		<button class="button btn-primary btn-wide start_practice">Section Four Test</button>		
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Five</a>
-		<p>Vocabulary from k to m</p>
-		<button class="button btn-primary btn-wide start_practice">Section Five Test</button>		
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Six</a>
-		<p>Vocabulary from m to o</p>
-		<button class="button btn-primary btn-wide start_practice">Section Six Test</button>		
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Seven</a>
-		<p>Vocabulary from p to r</p>
-		<button class="button btn-primary btn-wide start_practice">Section Seven Test</button>		
-	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-offset-1 col-xs-10 section"> 
-		<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section">Section Eight</a>
-		<p>Vocabulary from s to z</p>
-		<button class="button btn-primary btn-wide start_practice">Section Eight Test</button>		
+	
+	<?php 
+		$numbers=array("One","Two","Three","Four","Five","Six","Seven","Eight");
+		$letters=array('"A"-"C"','"C"-"E"','"E"-"H"','"H"-"K"','"A"-"C"','"C"-"E"','"E"-"H"','"H"-"K"');
+		for($i = 0; $i<8;$i++): 
+		?>
+		<div class="panel panel-royalty col-lg-6 col-md-6"> 
+			<a href="#vocabularycard" data-toggle="modal" class="vocabulary_section title">Section <?php echo $numbers[$i]; ?></a>
+			<p>Words beginning with the letter <?php echo $letters[$i]; ?></p>	
+			<button class="button btn-royalty btn-wide start_practice">Section <?php echo $numbers[$i]; ?> Test</button>
+		</div>
+	<?php endfor;  ?>
+	
+	<div class="panel col-lg-offset-3 col-lg-3 col-md-offset-3 col-md-3">  
+		<button class="btn btn-royalty btn-xl start_practice">Test For All Sections </button>				
 	</div>
 </div >
 

@@ -1,10 +1,8 @@
+<h2> Want to provide information to other students? Post here:</h2>
+<form method='POST' action='/posts/p_add' class="row">
+<textarea class="panel panel-info col-lg-12 col-md-12" name='content' id='content'></textarea>
 
-<h1> Want to provide information to other students? Post here</h1>
-<form method='POST' action='/posts/p_add'>
-<textarea class="addpost" name='content' id='content'></textarea>
-
-<br><br>
-<input class="midright" type='submit' value='submit'>
+<input class="button btn-info btn-md-wd col-lg-offset-8 col-md-offset-8" type='submit' value='submit'>
 
 </form>
 

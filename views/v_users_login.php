@@ -1,13 +1,13 @@
-<div id="top"> 
+<div class="bx-outside"> 
   <h2>Log in</h2>
-  <form class='box' role='form' method='POST' action='/users/p_login'>
+  <form class='bx-inner' role='form' method='POST' action='/users/p_login'>
   	<div class="form-group">
-      <label for='email'>Email</label>
-      <input type='email' name='email' class='form-control' placeholder='Your email'>
+      <label for='loginemail'>Email</label>
+      <input type='email' name='email' id='loginemail' class='form-control' placeholder='Your email'>
     </div>
   	<div class="form-group">
-  		<label for="password">Password</label>
-     		<input type='password' name='password' class='form-control' placeholder='Enter password'><br><br>
+  		<label for="loginpassword">Password</label>
+     		<input type='password' name='password' id='loginpassword' class='form-control' placeholder='Enter password'>
      	</div>
 
       <!--If errors - display message-->
@@ -17,6 +17,7 @@
           </div>
       <?php endif; ?>
 
-     <button type='Submit' class='btn btn-default'>Log in</button>
+     <button type='Submit' class='btn btn-royalty btn-lg'>Log in</button>
     </form>
 </div>
+

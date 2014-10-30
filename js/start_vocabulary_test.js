@@ -3,12 +3,13 @@
 For Word Test Page
 ===============================================================================================================================*/
 
-$('.start_test').one("click", function(){
+$('#start_test').one("click", function(){
 
 	//New subtitle and new button:
 	$("#subtitle").html('Please pick up the correct explanation from the four explanations listed below:<br><input type ="submit"  class="re_start" id="test_reload" value="Back to Home Page">');
-	$("#submit").html('<input type ="submit"  id="check_testanswer" value="Check Answer"><br>');
-	$(".start_test").hide();
+	$("#submit").html('<button  id="check_testanswer" class="btn btn-info btn-md-wd"> Check Your Answer Result</button>');
+	$("#start_test").hide();
+
 /*------------------------------------------------------------------------------------------
 Produce words for testing and their four explanation choices
 --------------------------------------------------------------------------------------------*/
@@ -50,7 +51,7 @@ Produce words for testing and their four explanation choices
 		'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer3" value="'+wordChoice[3]+'">'+wordChoice[3]+'<br><br>'
 		);
 
-	//clear the test results on the screen
+	//clear the previous test results on the screen
 	$('.result').html('');
 	}
 
@@ -90,6 +91,7 @@ Check if the answer is correct
  		var score = correct_answer_number*5	
    	 	$('.result').html('Your test score is ' + score + '. <br> You have tested 20 words. '+ correct_answer_number + ' answers are correct, '+wrong_answer_number+ ' answers are wrong.<br>');   				 			
    	});
+
 /*--------------------------------------------------------------------------------
 Start a new test
 -----------------------------------------------------------------------------*/

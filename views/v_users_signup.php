@@ -1,4 +1,4 @@
-<div id="bottom">
+<div class="bx-outside">
     <H2>Sign Up</h2>
       <!--If errors - display message-->
         <?php if(isset($error)): ?>
@@ -6,16 +6,14 @@
                 <p>All fields are required. Please sign up again.</p>
             </div>
         <?php endif; ?>
-        
 
-
-    <form class="box" role="form" method='POST' action='/users/p_signup'>
+    <form class="bx-inner" role="form" method='POST' action='/users/p_signup'>
         <div class="form-group">
-            <label for="firstname">First Name</label>
+            <label for="first_name">First Name</label>
             <input type='text' id='first_name' name='first_name' class='form-control' placeholder='First Name'>
         </div>
         <div class="form-group">
-            <label for="lastname">Last Name</label>
+            <label for="last_name">Last Name</label>
             <input type='text' id='last_name' name='last_name' class='form-control' placeholder='Last Name'>
         </div>
         <div class="form-group">
@@ -27,6 +25,6 @@
             <input type='password' id='password' name='password' class='form-control' placeholder='Password'>
         </div>
 
-        <button  type='Submit' class="btn btn-default">Sign Up </button>
+        <button  type='Submit' class="btn btn-royalty btn-lg">Sign Up </button>
     </form>
 </div>

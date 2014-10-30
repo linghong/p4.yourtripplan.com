@@ -182,9 +182,9 @@ $('.start_practice').click(function(){
 
     //make a new button
 
-    $("#practicetitle").html("<h3>Please click the 'Next' button to start the vocabulary test.</h3>");
+    $("#practicetitle").html("<div class='preface'>Please click the 'Next' button to start the vocabulary test.</div>");
     $(".vocabulary_practice").hide();
-    $("#nextword").html('<button id="next_word" clas="button btn-royalty btn-wide">Next</button>'); 
+    $("#nextword").html('<button id="next_word" class="btn btn-success btn-regular col-md-offset-7">Next</button>'); 
 
     //set up original number to zero. 
     correct_answer_number=0;
@@ -199,10 +199,10 @@ $('.start_practice').click(function(){
       $("#practicetitle").hide();
 
       //start it again 
-      $("#re_load").html('<input type ="submit"  class="re_start" id="practice_reload" value="Start a New Test"><p>Pick up the correct answer choice listed below the word. Click the "Next" button to answer another question.</p> <p>Before clicking the "Next" button to go to next word question, always click "check answer for this word" to check whether your answer is correct, unless you want skip  the  question.</p>');
+      $("#re_load").html('<input type ="submit"  class="btn btn-success-darken btn-wide col-md-offset-6" id="re_start" value="Start a New Test"><p>Pick up the correct answer choice listed below the word. Click the "Next" button to answer another question.</p> <p>Before clicking the "Next" button to go to next word question, always click "check answer for this word" to check whether your answer is correct, unless you want skip  the  question.</p>');
 
       //show check answer and check score buttons
-      $("#practice_submit").html('<input type ="submit"  id="check_exerciseanswer" value="Check Answer for this Word"><br><input type ="submit"  id="check_result" value="Check My Test Score"><br><br>');
+      $("#practice_submit").html('<div class="panel btn-group"><button id="check_exerciseanswer" class="btn btn-success-lighten btn-md-wd">Check Answer for this Word</button><button id="check_result"  class="btn btn-success-lighten btn-md-wd">Check My Test Score</button></div>');
 
       //delete any information about the result of the previous answer
       $(".result").html("");
@@ -282,25 +282,7 @@ Start a new test
 ----------------------------------------------------------------------------*/
 
   	//start a new word test
-  	$('.re_start').click(function(){
-  	/*
-  	var vocabulary_string = practiceVocabulary.join();
-  	   	$.ajax({
-  	   	type:'POST',
-  	   	url:'/tests/save_data',
-  	   	beforeSend:function(){
-  	   	//Display a loading message while waiting for the ajax call to complete
-  	   	$('#save').html("loading......");
-  	   	},
-  	   	success: function(response){
-  	   	$('#save').html("you data has been saved.");
-  	   	},
-  	   	data:{
-  	  		vocabulary_string: practiceVocabulary.join(),
-  	  	},
-
-  	   	});
-  	*/
+  	$('#re_start').click(function(){
     practiceVocabulary = newVocabulary;
     practiceExplanations = vocabularyExplanations;
   	location.reload();
