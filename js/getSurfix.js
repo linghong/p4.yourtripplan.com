@@ -1,3 +1,4 @@
+/*This file has been renamed to mwlink.file and no more existed*/
 /*
 The purpose is to find a word's prounciation link from merrian-webster dictionary
 which, in general, uses a word's first six letters and the number "1" to represent a word . 
