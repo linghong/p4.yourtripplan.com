@@ -43,11 +43,13 @@ Class tests_controller extends base_controller{
 			//'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
 	 		'/js/vocabularylibrary.js',
 	 		'/js/explanationchoice.js',
-	 		'/js/getSurfix.js',
+	 		'/js/getSuffix.js',
 	 		'/js/practice_test.js'
 	 	);
 
 	 	$this ->template ->client_files_body = Utils::load_client_files($client_files_body);
+		
+		$this -> template -> title = "Test Practice";
 
 	 	#Render template
 	 	echo $this ->template;

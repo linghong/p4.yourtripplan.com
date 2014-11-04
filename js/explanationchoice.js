@@ -12,7 +12,7 @@ set up a function to generate four word explanation choices to form the wordChoi
 	representation the posotion for three wrong explanation choice in the array
 ------------------------------------------------------------------------------------------------*/
 	//Generate a function for the four word explanation choices 
-	function explanationchoice(testword_number,words_count, practiceExplanations, wordExplanations){ 		
+	function explanationchoice(testword_number,words_count, practiceLibrary, wordLibrary){ 		
 
 		//Generate three random numbers, which will be used for selecting the three wrong explanations from the vocabulary array library 
 		random_number1 = Math.floor(Math.random()*words_count);
@@ -34,9 +34,9 @@ set up a function to generate four word explanation choices to form the wordChoi
 			}
 		
     	//pick up the three wrong explanations and make an array for word explanation choices	
-    	var wrong_explanation1 = wordExplanations[random_number1];
-	    var wrong_explanation2 = wordExplanations[random_number2];
-	    var wrong_explanation3 = wordExplanations[random_number3];
+    	var wrong_explanation1 = wordLibrary[random_number1].word;
+	    var wrong_explanation2 = wordLibrary[random_number2].word;
+	    var wrong_explanation3 = wordLibrary[random_number3].word;
     	wordChoice = new Array(
 	    	wrong_explanation1,
 	    	wrong_explanation2,
@@ -45,7 +45,7 @@ set up a function to generate four word explanation choices to form the wordChoi
 
     	//generate a random number, use it as an order to insert the correct explanation in the word explanation choice array
 		random_number = Math.floor(Math.random()*3);
-    	wordChoice.splice(random_number,0,practiceExplanations[testword_number]);
+    	wordChoice.splice(random_number,0,practiceLibrary[testword_number].explanation);
 	}
 
 

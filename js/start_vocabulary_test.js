@@ -13,6 +13,7 @@ $('#start_test').one("click", function(){
 /*------------------------------------------------------------------------------------------
 Produce words for testing and their four explanation choices
 --------------------------------------------------------------------------------------------*/
+	$.getJSON('/data/SATVocabulary.json', function(newVocabulary){
 	//Calculate newVocabulary array's total word number
 	words_count = newVocabulary.length
 
@@ -33,7 +34,7 @@ Produce words for testing and their four explanation choices
 	 		}
 		}
 	//Use the explanationchoice function to produce four explanation choices for each test word
-	explanationchoice(randomNumber[i],newVocabulary.length, vocabularyExplanations,vocabularyExplanations);
+	explanationchoice(randomNumber[i],newVocabulary.length, newVocabulary, newVocabulary);
 	
 	//List the test word and the four explanations on the screen
 	wordQuestion = new Array
@@ -44,7 +45,7 @@ Produce words for testing and their four explanation choices
 		
 	$(".word").after
 		(
-		'<div id="question">Question '+q+'. '+ newVocabulary[randomNumber[i]]+
+		'<div id="question">Question '+q+'. '+ newVocabulary[randomNumber[i]].word+
 		'</div><br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer0" value="'+wordChoice[0]+'">'+wordChoice[0]+
 		'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer1" value="'+wordChoice[1]+'">'+wordChoice[1]+
 		'<br><input type="radio" name="'+wordQuestion[i]+'" class="questions" id="answer2" value="'+wordChoice[2]+'">'+wordChoice[2]+
@@ -75,7 +76,7 @@ Check if the answer is correct
 			var answer =$('input:radio[name="'+wordQuestion[i]+'"]:checked').val();
 
 			//correct explanation
-    		correct_explanation = vocabularyExplanations[randomNumber[i]];
+    		correct_explanation = newVocabulary[randomNumber[i]].explanation;
 
 			//compare the checked answer to correct answer. tell the answer results and count the correct and wrong answer numbers
 			if (answer == correct_explanation)
@@ -90,8 +91,8 @@ Check if the answer is correct
  		}
  		var score = correct_answer_number*5	
    	 	$('.result').html('Your test score is ' + score + '. <br> You have tested 20 words. '+ correct_answer_number + ' answers are correct, '+wrong_answer_number+ ' answers are wrong.<br>');   				 			
-   	});
-
+   	});//check_testanswer
+	});//getJSON
 /*--------------------------------------------------------------------------------
 Start a new test
 -----------------------------------------------------------------------------*/
@@ -100,6 +101,5 @@ Start a new test
 	$('.re_start').click(function(){
 			location.reload()
 	});
-
 
 });

@@ -13,6 +13,8 @@ Class posts_controller extends base_controller{
 
 			# Setup view
 			$this->template->content = View::instance('v_posts_add');
+
+			 $this->template->title = "Add Posts";
 			//$this->template->title = "New Post";
 
 			# Render template
@@ -42,7 +44,8 @@ Class posts_controller extends base_controller{
 
 			#Set up the view
 			$this->template->content = View::instance('v_posts_index');
-
+ 
+ 			$this->template->title = "Posts";
 
 			#Query
 			$q = 'SELECT
@@ -77,6 +80,7 @@ Class posts_controller extends base_controller{
 			#Set up the view
 			$this->template->content = View::instance('v_posts_myposts');
 
+			 $this->template->title = "My Posts";
 
 			#Query
 			$q = 'SELECT

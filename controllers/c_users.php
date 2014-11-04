@@ -132,7 +132,7 @@
           //'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
           '/js/vocabularylibrary.js',
           '/js/explanationchoice.js',
-          '/js/getSurfix.js',
+          '/js/getSuffix.js',
           '/js/practice_test.js'
         );
 
