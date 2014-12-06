@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<!-- Common CSS/JSS -->
-		<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
     	<script src="/js/respond.min.js"></script>							
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -104,20 +104,20 @@
 
 			<!--row3 -->
 			<div class="row ">
-				<article class="frontbox col-lg-7 col-md-7 col-sm-12">
-					<div></div>				
-					<?php if(isset($content)) echo $content; ?>
-				</article>
-
-				<aside class="col-lg-5 col-md-5 col-sm-12">
-					<div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
+				
+				<aside class="pull-right col-md-5 col-sm-12">
+					<div class="col-md-offset-1 col-md-10 col-sm-5 col-xs-12 ">
 							<?php if(isset($login)) echo $login; ?>
 					</div>
 
-					<div class="col-lg-12 col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
+					<div class="pull-right col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
 							<?php if(isset($signup)) echo $signup; ?>
 					</div> 
 				</aside>
+				<section class="pull-left frontbox col-md-7 col-sm-12">
+					<div></div>				
+					<?php if(isset($content)) echo $content; ?>
+				</section>
 			</div>
 			<?php endif; ?>
 
