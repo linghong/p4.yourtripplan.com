@@ -1,5 +1,5 @@
 <section class="panel panel-info">
-	<aside class="row">
+	<aside class="row vocabulary_practice">
 		<div class="col-md-6  pull-right">
 			<form role="form">
 				<legend>
@@ -53,11 +53,11 @@
 					<button class="button btn-royalty btn-wide start_practice">Section <?php echo $numbers[$i]; ?> Test</button>
 				</div>
 			<?php endfor;  ?>
+		
+			<div class="col-md-offset-4 col-md-4">  
+				<button class="btn btn-royalty btn-xl start_practice">Test For All Sections </button>				
+			</div>
 		</div >	
-		<div class="col-md-offset-4 col-md-4">  
-			<button class="btn btn-royalty btn-xl start_practice">Test For All Sections </button>				
-		</div>
-
 		<div class ="col-md-12">
 			<div id="nextword" ></div>
 			<div class="practice_word"></div>
