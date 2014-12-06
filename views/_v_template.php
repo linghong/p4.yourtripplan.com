@@ -5,7 +5,14 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<!-- Common CSS/JSS -->
-		<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<script src="/js/modernizr.custom.js"></script>
+		<script>
+		Modernizr.load({
+		  test: Modernizr.canvas,
+		  nope: 'http://flashcanvas.net/bin/flashcanvas.js'
+		});
+		</script>
     	<script src="/js/respond.min.js"></script>							
 		<!-- Controller Specific JS/CSS -->
 		<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -131,6 +138,8 @@
 
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/jcanvas.min.js"></script>
+		<script src="/js/animation.js"></script>
 		<script>	
 		    $('.carousel').carousel({
         		interval:2000

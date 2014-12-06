@@ -6584,12 +6584,28 @@ Modals
 .model-body {
   padding: 15px;
 }
+.each_word {
+  margin: 25px;
+  line-height: 30px;
+}
+canvas {
+  padding: 10px;
+  margin-top: 20px;
+  border: 5px solid #669999;
+  max-width: 95%;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius: 5px;
+  background-color: #FCFFFF;
+}
 /*----------------------------------------------------------------------------------------------------------
 Boxes and Panel
 ------------------------------------------------------------------------------------------------------------
 */
 .panel {
   padding: 15px;
+}
+main .panel {
+  border: 30px solid #f8fcfe;
 }
 .panel-info {
   border: 1px solid #31b0d5;
@@ -6716,6 +6732,9 @@ form .btn {
 }
 form lengend {
   font-size: 22px;
+}
+.hedhog {
+  padding-left: 100px;
 }
 /*------------------------------------------------------------------------------
   media screen
