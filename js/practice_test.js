@@ -174,8 +174,13 @@ $('.start_practice').click(function(){
     //make a new button
     $("#practicetitle").html("<div class='preface'>Please click the 'Next' button to start the vocabulary test.</div>");
     $(".vocabulary_practice").hide();
-    $("#nextword").html('<button id="next_word" class="btn btn-success-lighten btn-regular col-md-offset-7">Next</button>'); 
-
+    $("#nextword").html('<div class="btn-group">'+
+        '<button id="check_exerciseanswer" class="btn btn-success btn-md-wd">Check Answer for this Word</button>'+
+        '<button id="check_result" class="btn btn-success btn-md-wd">Check My Test Score</button>'+
+        '<button id="next_word" class="btn btn-success btn-md-wd">Next Word</button>'+
+        '</div>');
+    $("#check_exerciseanswer").hide();
+     $("#check_result").hide();
     //set up original number to zero. 
     correct_answer_number=0;
     wrong_answer_number =0;
@@ -184,15 +189,13 @@ $('.start_practice').click(function(){
 
     //For each click:
     $('#next_word').click(function(){
-
+      $("#check_exerciseanswer").show();
+     $("#check_result").show();
       //hide some text
       $("#practicetitle").hide();
-
       //start it again 
-      $("#re_load").html('<input type ="submit"  class="btn btn-success-darken btn-wide col-md-offset-6" id="re_start" value="Start a New Test"><p>Pick up the correct answer choice listed below the word. Click the "Next" button to answer another question.</p> <p>Before clicking the "Next" button to go to next word question, always click "check answer for this word" to check whether your answer is correct, unless you want to skip  the  question.</p>');
+      $("#re_load").html('<input type ="submit"  class="btn btn-success-darken btn-wide col-md-offset-6" id="re_start" value="Start a New Test"><p>Select the correct answer choice listed below the word. To go to next question, click the "Next Word" button. Before doing so, make sure clicking "check answer for this word" to conform your answer and check whether your answer is correct.</p>');
 
-      //show check answer and check score buttons
-      $("#practice_submit").html('<div class="panel btn-group"><button id="check_exerciseanswer" class="btn btn-success btn-md-wd">Check Answer for this Word</button><button id="check_result"  class="btn btn-success btn-md-wd">Check My Test Score</button></div>');
 
       //delete any information about the result of the previous answer
       $(".result").html("");
@@ -209,12 +212,13 @@ $('.start_practice').click(function(){
       explanationchoice(random_number0,words_count, practiceVocabulary,newVocabulary);
 
       //Print out the test word and the four explanations
-      $(".practice_word").html("<div id='question'>Question "+i+". "+ practiceVocabulary[random_number0].word+
-          '</div><br><input type="radio" name="answer" class="questions" id="answer0" value="'+wordChoice[0]+'">'+wordChoice[0]+
-      	 '<br><input type="radio" name="answer" class="questions" id="answer1" value="'+wordChoice[1]+'">'+wordChoice[1]+
-      	 '<br><input type="radio" name="answer" class="questions" id="answer2" value="'+wordChoice[2]+'">'+wordChoice[2]+
-      	 '<br><input type="radio" name="answer" class="questions" id="answer3" value="'+wordChoice[3]+'">'+wordChoice[3]+'<br><br>'
-      );
+      $(".practice_word").html('<div class="form-group">'+
+        '<label class="control-label col-lg-12" id="question">Question'+i+'. '+ practiceVocabulary[random_number0].word+'</label>'+
+         '<label for="explanation" class="radio col-xs-12"><input type="radio" name="answer" class="questions" id="answer0" value="'+wordChoice[0]+'">'+wordChoice[0]+'</label>'+
+      	 '<label for="explanation" class="radio col-xs-12"><input type="radio" name="answer" class="questions" id="answer1" value="'+wordChoice[1]+'">'+wordChoice[1]+'</label>'+
+      	 '<label for="explanation" class="radio col-xs-12"><input type="radio" name="answer" class="questions" id="answer2" value="'+wordChoice[2]+'">'+wordChoice[2]+'</label>'+
+      	 '<label for="explanation" class="radio col-xs-12"><input type="radio" name="answer" class="questions" id="answer3" value="'+wordChoice[3]+'">'+wordChoice[3]+'</label>'+
+         '</div>')
 
 /*----------------------------------------------------------------------------------------     
 Check if the test answer is correct

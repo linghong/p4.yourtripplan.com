@@ -59,11 +59,12 @@
 			</div>
 		</div >	
 		<div class ="col-md-12">
-			<div id="nextword" ></div>
+			<div id="re_load"></div>
 			<div class="practice_word"></div>
+			<div id="nextword" ></div>
 			<div class="result"></div>	
 			<div  id="practice_submit"></div>	
 		</div>					
-		<div id="re_load"></div>
+		
 	</main>
 </section>
