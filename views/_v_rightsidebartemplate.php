@@ -66,13 +66,13 @@
 
 			<!--row3 -->
 			<div class="row ">
-				<article class="frontbox col-lg-7 col-md-7 col-sm-12">
+				<article class="frontbox col-md-7 colsm-7 col-xs-12">
 					<div></div>				
 					<?php if(isset($content)) echo $content; ?>
 				</article>
 
-				<aside class="col-lg-5 col-md-5 col-sm-12">
-					<div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-5 col-xs-12 ">
+				<aside class="col-md-5 col-sm-5 col-xs-12">
+					<div class="col-md-offset-2 col-md-10 col-md-12 col-xs-12 ">
 						<?php if(isset($login)) echo $sidebar; ?>
 					</div>
 				</aside>
@@ -81,8 +81,8 @@
 			<!-- for users who are not logged in, Sign up or login -->
 			<?php else: ?>
 			<!--row2: navigation -->
-			<div class="row">
-				<nav class="navbar navbar-default" role="navigation">
+
+				<nav class="row navbar navbar-default" role="navigation">
 					<div class="navbar-header">
 			            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 			                <span class="sr-only">Toggle navigation</span>
@@ -100,24 +100,23 @@
 						</ul>
 					</div>
 				</nav>
-			</div>
+
 
 			<!--row3 -->
 			<div class="row ">
-				
-				<aside class="pull-right col-md-5 col-sm-12">
+				<section class="frontbox col-md-7 col-sm-12">
+					<div></div>				
+					<?php if(isset($content)) echo $content; ?>
+				</section>
+				<aside class="col-md-5 col-sm-12">
 					<div class="col-md-offset-1 col-md-10 col-sm-5 col-xs-12 ">
 							<?php if(isset($login)) echo $login; ?>
 					</div>
 
-					<div class="pull-right col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
+					<div class="col-md-12 col-sm-offset-1 col-sm-6 col-xs-12">
 							<?php if(isset($signup)) echo $signup; ?>
 					</div> 
 				</aside>
-				<section class="pull-left frontbox col-md-7 col-sm-12">
-					<div></div>				
-					<?php if(isset($content)) echo $content; ?>
-				</section>
 			</div>
 			<?php endif; ?>
 

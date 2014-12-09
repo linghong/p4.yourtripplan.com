@@ -6602,7 +6602,7 @@ Boxes and Panel
 ------------------------------------------------------------------------------------------------------------
 */
 .panel {
-  padding: 15px;
+  padding: 30px;
 }
 main .panel {
   border: 30px solid #f8fcfe;
@@ -6745,6 +6745,26 @@ form lengend {
   }
   #vocabularycard {
     width: 100%;
+  }
+  .frontbox p {
+    display: none;
+  }
+  .frontbox img {
+    display: none;
+  }
+  .frontbox h2 {
+    display: none;
+  }
+  .frontbox .title {
+    color: white;
+    background-color: #b787e8;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .frontbox {
+    width: 85%;
+    padding: 5px;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 992px) {
