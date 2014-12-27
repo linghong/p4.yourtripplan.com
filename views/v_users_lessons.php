@@ -1,6 +1,7 @@
 <section class="panel panel-info">
+	<h1>Vocabulary Lessons</h1>	
 	<aside class="row vocabulary_practice">
-		<div class="col-md-6  pull-right">
+		<div class="col-md-push-6 col-md-6 ">
 			<form role="form">
 				<legend>
 				    Before Starting Your Lesson, Let's First Give A Wish 
@@ -25,14 +26,13 @@
 			<button class="btn btn-royalty btn-wide" id="clear">Remove Effect from the Canvas</button>			
 		</div>
 
-		<div class="col-md-6 pull-left" >
-			<canvas width="680" height="390" id="animation">
+		<div class="col-md-pull-6 col-md-6" >
+			<canvas width="650" height="390" id="animation">
 			</canvas>
 	 	</div>
 	</aside>
 
 	<main class ="row">
-		<h1>Vocabulary Lessons</h1>	
 		<div class="col-md-12" id="practicetitle">
 			<P>The practice vocabulary library is equally divided into several sections. You can study any section at any time. Click the blue link of each section to view the vocabulary. A window that lists all the vocabulary belonging to that section will pop up. </p>	 
 			<p>You can also click the "Section Test" button to do the vocabulary test for this section. When your are doing the test, the site will automactically memorize the words you are familiar with, and let you meet more for the words that you haven't grasped. By this way, you'll learn new vocabulary fast.</p>

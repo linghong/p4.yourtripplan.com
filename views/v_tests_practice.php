@@ -1,6 +1,6 @@
 <section class="panel panel-info">
 	<aside class="row vocabulary_practice">
-		<div class="col-md-6  pull-right">
+		<div class="col-md-push-6 col-md-6">
 			<form role="form">
 				<legend>
 				    Before Starting Your Lesson, Let's First Give A Wish 
@@ -25,8 +25,8 @@
 			<button class="btn btn-royalty btn-wide" id="clear">Remove Effect from the Canvas</button>			
 		</div>
 
-		<div class="col-md-6 pull-left" >
-			<canvas width="680" height="390" id="animation">
+		<div class="col-md-pull-6 col-md-6" >
+			<canvas width="650" height="390" id="animation">
 			</canvas>
 	 	</div>
 	</aside>
